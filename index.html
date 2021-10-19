@@ -14,8 +14,12 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/2e08a2323e.js" crossorigin="anonymous"></script>
 
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
     <!-- CSS styles -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 
     <title>deLaHuerta - Frutas y Verduras Orgánicas</title>
 </head>
@@ -43,239 +47,31 @@
             <label for="search-box" class="fas fa-search"></label>
         </form>
 
-        <div class="shopping-cart">
+        <div class="shopping-cart" id="carrito">
+            <table  id="lista-carrito">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
 
-            <div class="box">
+            <!-- <div class="box">
                 <i class="fas fa-trash-alt"></i>
                 <img src="./images/cart-img-1-apio.png" alt="apio">
                 <div class="content">
                     <h3>Apio orgánico x atado</h3>
-                    <span class="price">$50/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-2-brocoli.png" alt="brócoli">
-                <div class="content">
-                    <h3>Brócoli orgánico x planta</h3>
-                    <span class="price">$180/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-3-cebolla.png" alt="cebolla">
-                <div class="content">
-                    <h3>Cebolla orgánica x kg</h3>
-                    <span class="price">$99/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <!-- <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-4-espinaca.png" alt="espinaca">
-                <div class="content">
-                    <h3>Espinaca orgánica x atado</h3>
-                    <span class="price">$250/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-5-kale.png" alt="apio">
-                <div class="kale">
-                    <h3>Kale orgánico x atado</h3>
-                    <span class="price">$210/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-6-lechuga.png" alt="lechuga">
-                <div class="content">
-                    <h3>Lechuga mantecosa orgánica x planta</h3>
-                    <span class="price">$99/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-7-palta.png" alt="palta">
-                <div class="content">
-                    <h3>Palta chilena x unidad</h3>
-                    <span class="price">$125/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-8-papa.png" alt="papa">
-                <div class="content">
-                    <h3>Papa blanca orgánica x kg</h3>
-                    <span class="price">$115/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-9-pimiento-amarillo.png" alt="pimiento amarillo">
-                <div class="content">
-                    <h3>Pimiento amarillo orgánico x unidad</h3>
-                    <span class="price">$135/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-10-pimiento-rojo.png" alt="pimiento rojo">
-                <div class="content">
-                    <h3>Pimiento rojo orgánico x unidad</h3>
-                    <span class="price">$120/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-11-pimiento-verde.png" alt="pimiento verde">
-                <div class="content">
-                    <h3>Pimiento verde orgánico x unidad</h3>
-                    <span class="price">$95/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-12-tomate.png" alt="tomate">
-                <div class="content">
-                    <h3>Tomate orgánico x 700gr</h3>
-                    <span class="price">$199/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-13-zapallito.png" alt="zapallito">
-                <div class="content">
-                    <h3>Zapallito orgánico x kg</h3>
-                    <span class="price">$170/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-14-zapallo.png" alt="zapallo coreano">
-                <div class="content">
-                    <h3>Zapallo coreano orgánico x unidad</h3>
-                    <span class="price">$90/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-15-banana.png" alt="banana">
-                <div class="content">
-                    <h3>Banana ecuador x 5 unidades</h3>
-                    <span class="price">$189/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-16-ciruela.png" alt="ciruela">
-                <div class="content">
-                    <h3>Ciruela orgánica x kg</h3>
-                    <span class="price">$188/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-17-frutilla.png" alt="frutillas">
-                <div class="content">
-                    <h3>Frutillas orgánicas x 500gr</h3>
-                    <span class="price">$450/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-18-kiwi.png" alt="kiwi">
-                <div class="content">
-                    <h3>Kiwi orgánico x kg</h3>
-                    <span class="price">$343/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-19-limon.png" alt="limón">
-                <div class="content">
-                    <h3>Limón orgánico x kg</h3>
-                    <span class="price">$170/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-20-mandarina.png" alt="mandarina">
-                <div class="content">
-                    <h3>Mandarina orgánica x kg</h3>
-                    <span class="price">$79/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-21-manzana-roja.png" alt="manzana roja">
-                <div class="content">
-                    <h3>Manzana roja orgánica x kg</h3>
-                    <span class="price">$160/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-22-manzana-verde.png" alt="manzana verde">
-                <div class="content">
-                    <h3>Manzana verde orgánica x kg</h3>
-                    <span class="price">$203/-</span>
-                    <span class="quantity">Cant : 1</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-trash-alt"></i>
-                <img src="./images/cart-img-23-naranja.png" alt="naranja">
-                <div class="content">
-                    <h3>Naranja orgánica x kg</h3>
-                    <span class="price">$150/-</span>
+                    <span class="price">$50</span>
                     <span class="quantity">Cant : 1</span>
                 </div>
             </div> -->
 
-            <div class="total"> Total : $3869/- </div>
+            <div class="total">Total : $3869</div>
             <div class="checkout-btn"><a href="#">Comprar ahora</a></div>
         </div>
 
@@ -303,22 +99,22 @@
     <!-- Features Section starts -->
     <section class="features" id="features">
         <h1 class="heading">Nuestros <span>Servicios</span></h1>
-        <div class="features__container">
-            <div class="features-box">
+        <div class="box-container">
+            <div class="box">
                 <img src="./images/features-img-1.png" alt="Canasta de vegetales y frutas">
                 <h3>Frescos y orgánicos</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
-            <div class="features-box">
+            <div class="box">
                 <img src="./images/features-img-2.png" alt="Delivery a domicilio">
                 <h3>Envío a domicilio</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
-            <div class="features-box">
+            <div class="box">
                 <img src="./images/features-img-3.png" alt="Medios de pago">
                 <h3>Todos los medios de pago</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -326,85 +122,248 @@
             </div>
         </div>
     </section>
-
     <!-- Features Section ends -->
-    <section class="products" id="products">
-        <h1 class="heading">Nuestros <span>Productos</span></h1>
 
-        <!-- Vegetables -->
-        <div class="product-slider">
-            <div class="wrapper">
-                <div class="box">
+    <!-- Vegetables Section starts -->
+    <section class="products" id="products">
+        <h1 class="heading">Nuestros <span>Vegetales</span></h1>
+
+        <div class="swiper product-slider">
+            <div class="swiper-wrapper" id="lista-vegetales">
+                <!-- <div class="swiper-slide box">
                     <img src="./images/cart-img-1-apio.png" alt="Apio">
-                    <h3>Apio orgánico</h3>
-                    <p> x atado</p>
+                    <h3>Apio</h3>
+                    <p>x atado</p>
                     <div class="price">$50/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
                 </div>
 
-                <div class="box">
+                <div class="swiper-slide box">
                     <img src="./images/cart-img-2-brocoli.png" alt="Brócoli">
-                    <h3>Brócoli orgánico</h3>
+                    <h3>Brócoli</h3>
                     <p>x planta</p>
                     <div class="price">$180/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
                 </div>
 
-                <div class="box">
+                <div class="swiper-slide box">
                     <img src="./images/cart-img-3-cebolla.png" alt="Cebolla">
-                    <h3>Cebolla orgánica</h3>
+                    <h3>Cebolla</h3>
                     <p>x kg</p>
                     <div class="price">$99/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
-                </div>
+                </div> -->
             </div>
         </div>
+    </section>
+    <!-- Vegetables Section ends -->
 
-        <!-- Fruits -->
-        <div class="product-slider">
-            <div class="wrapper">
-                <div class="box">
+    <!-- Fruits Section starts -->
+    <section class="products" id="products">
+        <h1 class="heading">Nuestras <span>Frutas</span></h1>
+
+        <div class="swiper product-slider">
+            <div class="swiper-wrapper" id="lista-frutas">
+                <!-- <div class="swiper-slide box">
                     <img src="./images/cart-img-15-banana.png" alt="Banana">
-                    <h3>Banana ecuatoriana</h3>
-                    <p> x 5 unidades</p>
+                    <h3>Banana</h3>
+                    <p>x 5 unidades</p>
                     <div class="price">$189/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
                 </div>
 
-                <div class="box">
+                <div class="swiper-slide box">
                     <img src="./images/cart-img-16-ciruela.png" alt="Ciruela">
-                    <h3>Ciruela orgánica</h3>
+                    <h3>Ciruela</h3>
                     <p>x kg</p>
                     <div class="price">$188/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
                 </div>
 
-                <div class="box">
+                <div class="swiper-slide box">
                     <img src="./images/cart-img-17-frutilla.png" alt="Frutilla">
-                    <h3>Frutilla orgánica</h3>
+                    <h3>Frutilla</h3>
                     <p>x 500g</p>
                     <div class="price">$450/-</div>
                     <a href="#" class="btn">Añadir al carrito</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
+    <!-- Fruits Section ends -->
 
-    <!-- Products Section starts -->
+    <!-- Veggie Boxes Section starts -->
+    <section class="features" id="features">
+        <h1 class="heading">Nuestras <span>Promos</span></h1>
 
+        <div class="box-container" id="lista-promos">
+            <!-- <div class="box">
+                <img src="./images/cart-img-24-cajon-vegetales.png" alt="Canasta de vegetales y frutas">
+                <h3>Cajón de Vegetales</h3>
+                <p>Te armamos un mix con variedades de nuestros vegetales a menor precio.</p>
+                <div class="quantity">2kg</div>
+                <div class="price">$450/-</div>
+                <a href="#" class="btn">Agregar al carrito</a>
+            </div>
 
+            <div class="box">
+                <img src="./images/cart-img-25-cajon-frutas.png" alt="Delivery a domicilio">
+                <h3>Cajón de Frutas</h3>
+                <p>Te armamos un mix con variedades de nuestras frutas a menor precio.</p>
+                <div class="quantity">2kg</div>
+                <div class="price">$450/-</div>
+                <a href="#" class="btn">Agregar al carrito</a>
+            </div>
 
+            <div class="box">
+                <img src="./images/cart-img-26-cajon-vegetales-frutas.png" alt="Medios de pago">
+                <h3>Combo de Vegetales y Frutas</h3>
+                <p>Te armamos un mix con variedades de nuestros productos a menor precio.</p>
+                <div class="quantity">4kg</div>
+                <div class="price">$450/-</div>
+                <a href="#" class="btn">Agregar al carrito</a>
+            </div> -->
+        </div>
+    </section>
+    <!-- Veggie Boxes Section ends -->
 
-    <!-- Features Section ends -->
+    <!-- Review Section starts -->
+    <section class="review" id="review">
+        <h1 class="heading">Nuestros <span>Clientes Opinan</span></h1>
 
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
 
+                <div class="swiper-slide box">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
+                    <div class="client">
+                        <img src="./images/cliente-1.jpeg" alt="cliente">
+                        <div class="nameStars">
+                            <h3>Mabel Díaz</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide box">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
+                    <div class="client">
+                        <img src="./images/cliente-2.jfif" alt="cliente">
+                        <div class="nameStars">
+                            <h3>Martín López</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide box">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
+                    <div class="client">
+                        <img src="./images/cliente-3.jpg" alt="cliente">
+                        <div class="nameStars">
+                            <h3>Ana García</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide box">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
+                    <div class="client">
+                        <img src="./images/cliente-4.jpg" alt="cliente">
+                        <div class="nameStars">
+                            <h3>Alex Suárez</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
+    <!-- Review Section ends -->
 
+    <!-- Footer Section starts -->
+    <section class="footer">
+        <div class="footer__box-container">
+            <div class="footer-box">
+                <h3>De La Huerta <i class="fas fa-shopping-basket"></i></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus, beatae dolores.</p>
+                <div class="share">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
 
+            <div class="footer-box">
+                <h3>Contactanos</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 221-0000001</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 221-0000002</a>
+                <a href="#" class="links"><i class="fas fa-envelope"></i> delahuerta@gmail.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Calle 100 N100, La Plata, Buenos Aires</a>
+            </div>
 
+            <div class="footer-box">
+                <h3>Atajos</h3>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Inicio</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Servicios</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Vegetales</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Frutas</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Promos</a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Opiniones Clientes</a>
+            </div>
 
+            <div class="footer-box">
+                <h3>Boletín de Noticias</h3>
+                <p>Suscríbete para no perderte nuestras novedades</p>
+                <input type="email" placeholder="tu casilla de correo" class="email">
+                <input type="submit" placeholder="suscríbete" class="email">
+                <img src="./images/payments.png" alt="medios de pago" class="payment-img">
+            </div>
+        </div>
+        <div class="credit">Creada por <span>Magdalena Pérez diseñadora</span> | Todos los derechos reservados</div>
+    </section>
 
+    <!-- Footer Section ends -->
 
-    <script src="./js/home.js"></script>
+    <!-- SCRIPTS starts-->
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Mis Scripts -->
+    <script src="./js/vegetales.js"></script>
+    <script src="./js/frutas.js"></script>
+    <script src="./js/promos.js"></script>
+    <script src="./js/app.js"></script>
+
+    <!-- SCRIPTS ends-->
+
 </body>
 </html>

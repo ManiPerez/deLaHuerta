@@ -6,7 +6,7 @@
 
 @import "colors";
 
-/*---------Aspectos Generales---------*/
+/*---------General---------*/
 
 *{
     box-sizing: border-box;
@@ -55,7 +55,7 @@ section {
     text-align: center;
     padding: 2rem 0;
     padding-bottom: 3rem;
-    font-size: 3.3rem;
+    font-size: 3rem;
     color: $black;
     font-weight: 400;
 
@@ -70,11 +70,27 @@ section {
 }
 
 .box {
-    display: flex;
     align-items: center;
     gap: 1rem;
     position: relative;
     margin: 1rem 0;
+
+    h3 {
+        font-size: 2rem;
+        line-height: 1.5;
+        color: $black;
+    }
+
+    .quantity {
+        font-size: 12px;
+        color: $light-color;
+        padding: .5rem 0;
+    }
+    
+    .price {
+        font-size: 18px;
+        color: $light-color;
+    }
 }
 
 .header {
@@ -333,6 +349,55 @@ section {
     }
 }
 
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1.5rem;
+
+    .box {
+        padding: 3rem 2rem;
+        background: #fff;
+        outline: $outline;
+        outline-offset: -1rem;
+        text-align: center;
+        box-shadow: $box-shasow;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            outline: $outline-hover;
+            outline-offset: 0rem;
+        }
+
+        img {
+            height: 16rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            line-height: 1.5;
+            color: $black;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: $light-color;
+            padding: 1rem 0;
+        }
+
+        .quantity {
+            font-size: 12px;
+            color: $light-color;
+            padding: 1rem 0;
+        }
+        
+        .price {
+            font-size: 18px;
+            color: $light-color;
+        }
+    }
+}
 /*----------- Home Section -----------*/
 .home {
     display: flex;
@@ -387,57 +452,226 @@ section {
     }
 }
 
-/*----------- Features Section -----------*/
-.features {
-    &__container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
-        gap: 1.5rem;
+/*----------- Products Section -----------*/
+.products {
+    .product-slider {
+        padding: 1rem 0;
 
+        &:first-child {
+            margin-bottom: 2rem;
+        }
 
-        .features-box {
-            padding: 3rem 2rem;
+        .box {
             background: #fff;
-            outline: $outline;
-            outline-offset: -1rem;
+            border-radius: .5rem;
             text-align: center;
+            padding: 3rem 2rem;
+            outline-offset: -1rem;
+            outline: $outline;
             box-shadow: $box-shasow;
-            justify-content: center;
-            align-items: center;
+            transition: .2s linear;
 
             &:hover {
-                outline: $outline-hover;
                 outline-offset: 0rem;
+                outline: $outline-hover;
             }
 
             img {
-                height: 16rem;
+                width: 130px;
+                height: 110px;
             }
 
             h3 {
-                font-size: 2rem;
-                line-height: 1.8;
+                font-size: 18px;
                 color: $black;
             }
 
             p {
-                font-size: 1.5rem;
-                line-height: 1.8;
+                font-size: 16px;
+                color: $black;
+            }
+
+            .quantity {
+                font-size: 14px;
                 color: $light-color;
-                padding: 1rem 0;
-            } 
+                padding: .5rem 0;
+            }
+
+            .price {
+                font-size: 18px;
+                color: $light-color;
+            }
+
+            .products-btn {
+                padding: .8rem 2rem;
+            }
         }
     }
 }
 
-/*----------- Products Section -----------*/
+/*----------- Review Section -----------*/
+.review .review-slider {
+    padding: 1rem;
 
+    .box {
+        background: #fff;
+        border-radius: .5rem;
+        text-align: center;
+        padding: 3rem 2rem;
+        outline-offset: -1rem;
+        outline: $outline;
+        box-shadow: $box-shasow;
+        transition: .2s linear;
 
+        &:hover {
+            outline-offset: 0rem;
+            outline: $outline-hover;
+        }
 
+        p {
+            padding: 1rem 0;
+            line-height: 1.5;
+            color: $light-color;
+            font-size: 1.5rem;
+        }
 
+        .client {
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
 
+            img {
+                height: 6rem;
+                width: 6rem;
+                border-radius: 50%;
+            }
 
+            .nameStars {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
+                h3 {
+                    padding-bottom: .5rem;
+                    color: $black;
+                    font-size: 1.5rem;
+                }
+        
+                .stars {
+                    i {
+                        color: $green;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------- Footer Section -----------*/
+
+.footer {
+    background: url(../images/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    &__box-container {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+        gap: 1.5rem;
+
+        .footer-box {
+            h3 {
+                font-size: 2rem;
+                color: $green;
+                font-weight: 500;
+                padding: 1rem 0;
+            }
+
+            a {
+                i {
+                    color: $green;
+                    font-size: 1.8rem;
+                    padding-left: .5rem;
+                }
+            }
+
+            .links {
+                font-size: 1.3rem;
+                display: block;
+                color: $green;
+                font: 1.5rem;
+                padding: 1rem 0;
+
+                i {
+                    font-size: 1.3rem;
+                    padding-right: .5rem;
+                }
+
+                &:hover {
+                    color: $green-lighter;
+                    padding-right: 2rem;
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+                line-height: 1.8;
+                font: 1.5rem;
+                color: $green;
+                padding: 1rem 0;
+            }
+
+            img {
+                width: 50px;
+            }
+
+            .share {
+                a {
+                    i {
+                        font-size: 2rem;
+                        color: $green;
+                        margin-left: .2rem;
+    
+                        &:hover {
+                            color: $green-lighter;
+                        }
+                    }
+                }
+            }
+
+            .email {
+                width: 100%;
+                margin: .7rem 0;
+                padding: .7rem;
+                border-radius: .5rem;
+                font-size: 1.5rem;
+                background: none;
+                color: $green;
+                border: 1px solid $green;
+            }
+
+            .payment-img {
+                margin-top: 2rem;
+                width: 15rem;
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        font-size: 1.5rem;
+        color: $green;
+
+        span {
+            color: $green-lighter;
+        }
+    }
+}
 
 /*-------------- Media Queries --------------*/
 @media (max-width:991px) {
@@ -451,6 +685,29 @@ section {
 
     .header {
         padding: 2rem;
+    }
+
+    .products-btn {
+        padding: .8rem 3rem;
+    }
+
+    .review {
+        .review-slider {
+            .box {
+                .client {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+            
+                    img {
+                        height: 6rem;
+                        width: 6rem;
+                        border-radius: 50%;
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -488,10 +745,14 @@ section {
                 transition: .4s linear;
             }
         }
+    }
 
-        .heading {
-            font-size: 2.5rem;
-        }
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .footer {
+        text-align: center;
     }
 }
 
