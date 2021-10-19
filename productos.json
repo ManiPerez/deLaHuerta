@@ -1,0 +1,187 @@
+[
+    { 
+        "imagen": "images/cart-img-1-apio.png",
+        "nombre": "Apio", 
+        "precio": "$50", 
+        "xunidad": "x planta",
+        "id": 1
+    }, 
+    { 
+        "imagen": "images/cart-img-2-brocoli.png",
+        "nombre": "Brocoli", 
+        "precio": "$180", 
+        "xunidad": "x planta",
+        "id": 2
+    },                
+    {  
+        "imagen": "images/cart-img-3-cebolla.png",
+        "nombre": "Cebolla", 
+        "precio": "$99", 
+        "xunidad": "x kg",
+        "id": 3
+    },
+    {  
+        "imagen": "images/cart-img-4-espinaca.png",
+        "nombre": "Espinaca", 
+        "precio": "$150", 
+        "xunidad": "x atado",
+        "id": 4
+    },
+    {  
+        "imagen": "images/cart-img-5-kale.png",
+        "nombre": "Kale", 
+        "precio": "$165", 
+        "xunidad": "x atado",
+        "id": 5
+    },
+    {  
+        "imagen": "images/cart-img-6-lechuga.png",
+        "nombre": "Lechuga", 
+        "precio": "$99", 
+        "xunidad": "x planta",
+        "id": 6
+    },
+    {  
+        "imagen": "images/cart-img-7-palta.png",
+        "nombre": "Palta", 
+        "precio": "$125", 
+        "xunidad": "x unidad",
+        "id": 7
+    },
+    {  
+        "imagen": "images/cart-img-8-papa.png",
+        "nombre": "Papa", 
+        "precio": "$115", 
+        "xunidad": "x kg",
+        "id": 8
+    },
+    {  
+        "imagen": "images/cart-img-9-pimiento-amarillo.png",
+        "nombre": "Pimiento amarillo", 
+        "precio": "$135", 
+        "xunidad": "x unidad",
+        "id": 9
+    },
+    {  
+        "imagen": "images/cart-img-10-pimiento-rojo.png",
+        "nombre": "Pimiento rojo", 
+        "precio": "$120", 
+        "xunidad": "x unidad",
+        "id": 10
+    },
+    {  
+        "imagen": "images/cart-img-11-pimiento-verde.png",
+        "nombre": "Pimiento verde", 
+        "precio": "$95", 
+        "xunidad": "x unidad",
+        "id": 11
+    },
+    {  
+        "imagen": "images/cart-img-12-tomate.png",
+        "nombre": "Tomate", 
+        "precio": "$145", 
+        "xunidad": "x kg",
+        "id": 12
+    },
+    {  
+        "imagen": "images/cart-img-13-zapallito.png",
+        "nombre": "Zapallito", 
+        "precio": "$170", 
+        "xunidad": "x kg",
+        "id": 13
+    },
+    {  
+        "imagen": "images/cart-img-14-zapallo.png",
+        "nombre": "Zapallo", 
+        "precio": "$90", 
+        "xunidad": "x unidad",
+        "id": 14
+    },
+    {  
+        "imagen": "images/cart-img-15-banana.png",
+        "nombre": "Banana", 
+        "precio": "$155", 
+        "xunidad": "x kg",
+        "id": 15
+    },
+    {  
+        "imagen": "images/cart-img-16-ciruela.png",
+        "nombre": "Ciruela", 
+        "precio": "$188", 
+        "xunidad": "x kg",
+        "id": 16
+    },
+    {  
+        "imagen": "images/cart-img-17-frutillas.png",
+        "nombre": "Frutillas", 
+        "precio": "$450", 
+        "xunidad": "x kg",
+        "id": 17
+    },
+    {  
+        "imagen": "./images/cart-img-18-kiwi.png",
+        "nombre": "Kiwi", 
+        "precio": "$343", 
+        "xunidad": "x kg",
+        "id": 18
+    },
+    {  
+        "imagen": "images/cart-img-19-limon.png",
+        "nombre": "Limon", 
+        "precio": "$170", 
+        "xunidad": "x kg",
+        "id": 19
+    },
+    {  
+        "imagen": "images/cart-img-20-mandarina.png",
+        "nombre": "Mandarina", 
+        "precio": "$79", 
+        "xunidad": "x kg",
+        "id": 20
+    },
+    {  
+        "imagen": "images/cart-img-21-manzana-roja.png",
+        "nombre": "Manzana roja", 
+        "precio": "$160", 
+        "xunidad": "x kg",
+        "id": 21
+    },
+    {  
+        "imagen": "images/cart-img-22-manzana-verde.png",
+        "nombre": "Manzana verde", 
+        "precio": "$203", 
+        "xunidad": "x kg",
+        "id": 22
+    },
+    {  
+        "imagen": "images/cart-img-23-naranja.png",
+        "nombre": "Naranja", 
+        "precio": "$150", 
+        "xunidad": "x kg",
+        "id": 23
+    },
+    {
+        "imagen": "./images/cart-img-24-cajon-vegetales.png",
+        "nombre": "Cajón de Vegetales", 
+        "precio": "$1500", 
+        "xunidad": "",
+        "descripcion": "Te armamos un cajón con variedades de nuestros vegetales a menor precio.",
+        "id": 24
+    },
+    {
+        "imagen": "./images/cart-img-25-cajon-frutas.png",
+        "nombre": "Cajón de Frutas", 
+        "precio": "$1700", 
+        "xunidad": "2kg",
+        "descripcion": "Te armamos un cajón con variedades de nuestras frutas a menor precio.",
+        "id": 25
+    },
+    {
+        "imagen": "./images/cart-img-26-cajon-vegetales-frutas.png",
+        "nombre": "Cajón de Vegetales y Frutas", 
+        "precio": "$3000", 
+        "xunidad": "4kg",
+        "descripcion": "Te armamos un combo con nuestros vegetales y frutas a menor precio.",
+        "id": 26
+    }
+]

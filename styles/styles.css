@@ -220,6 +220,27 @@ section {
   background: #fff;
 }
 
+.header .shopping-cart .empty-cart {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .shopping-cart .empty-cart p {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: #492A1A;
+  margin: 1rem;
+}
+
+.header .shopping-cart .empty-cart .checkout-btn a {
+  width: auto;
+  padding: .8rem 3rem;
+}
+
 .header .shopping-cart .box i {
   font-size: 2rem;
   position: absolute;

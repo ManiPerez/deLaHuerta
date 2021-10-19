@@ -209,6 +209,26 @@ section {
         width: 35rem;
         background: #fff;
 
+        .empty-cart {
+            align-content: center;
+            justify-content: center;
+
+            p {
+                font-size: 1.5rem;
+                padding: 1rem 0;
+                text-align: center;
+                color: $black;
+                margin: 1rem;
+            }
+
+            .checkout-btn {
+                a {
+                    width: auto;
+                    padding: .8rem 3rem;
+                }
+            }
+        }
+
         .box {
             i {
                 font-size: 2rem;

@@ -106,10 +106,6 @@ var swiper = new Swiper(".product-slider", {
 
 // const listaPromos = document.querySelector('#lista-promos');
 
-// const tableCarrito = document.querySelector('#lista-carrito tbody');
-// const formBuscador = document.querySelector('#formulario');
-// let carrito;
-
 // // LISTENERS
 // document.addEventListener('DOMContentLoaded',()=>{
 //   renderVegetales(vegetales);
@@ -122,59 +118,6 @@ var swiper = new Swiper(".product-slider", {
 // document.addEventListener('DOMContentLoaded',()=>{
 //   renderPromos(promos);
 // });
-
-
-// listaVegetales.addEventListener('click',agregarProducto);
-// listaFrutas.addEventListener('click',agregarProducto);
-// listaPromos.addEventListener('click',agregarProducto);
-
-// function agregarProducto(e) {
-//   e.preventDefault();
-//   if (e.target.classList.contains("addCart")) {
-//     const productCard = e.target.parentElement.parentElement;
-
-//     const productoAgregado = {
-//       imagen: productCard.querySelector('img.imagen-producto').src,
-//       nombre: productCard.querySelector('h3').textContent, 
-//       cantidad: 1,
-//       precio: productCard.querySelector('.price').textContent,
-//       id: productCard.querySelector('span').dataset.id,
-//     }
-
-//     carrito.push(productoAgregado);
-//   }
-// }
-
-// function actualizarCarritoHTML() {
-// 	tableCarrito.innerHTML = '';
-
-// 	carrito.forEach(producto => {
-// 		const { imagen, nombre, precio, cantidad, id } = producto;
-// 		const row = document.createElement('tr');
-// 		row.innerHTML = `
-// 			<td>
-// 				<img src="${imagen}" width="100%">
-// 			</td>
-// 			<td>
-// 				${nombre}
-// 			</td>
-// 			<td>
-// 				${precio}
-// 			</td>
-// 			<td>
-// 				${cantidad}
-// 			</td>
-// 			<td>
-// 				<a href="#" class="borrar-producto" data-id="${id}"><i class="fas fa-trash"></i></a>
-// 			</td>
-// 		`
-// 		tableCarrito.appendChild(row);
-// 	});
-// }
-
-// function actualizarStorage() {
-// 	localStorage.setItem('carrito', JSON.stringify(carrito));
-// }
 
 // // DOM HTML
 // // DUDA: cuando coloco => data-id="${vegetal.id} en la etiqueta <button> del boton de Agregar al carrito en la linea 135 (como hizo el profe en clase), el boton no se muestra en mi html
@@ -226,5 +169,21 @@ var swiper = new Swiper(".product-slider", {
 //   });
 // }
 
+//------------------------------------------------------------------------------------------------------------------//
+
+// Leer JSON de productos
+document.addEventListener('DOMContentLoaded', ()=> {
+  fetchData();
+})
+
+const fetchData = async () => {
+  try {
+    const answer = await fetch('productos.json');
+    const data = await answer.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
