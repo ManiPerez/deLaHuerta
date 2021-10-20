@@ -26,7 +26,7 @@ body {
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 2rem;
 }
 
 .btn {
@@ -79,12 +79,6 @@ section {
   font-size: 2rem;
   line-height: 1.5;
   color: #492A1A;
-}
-
-.box .quantity {
-  font-size: 12px;
-  color: #784930;
-  padding: .5rem 0;
 }
 
 .box .price {
@@ -416,25 +410,31 @@ section {
 }
 
 .box-container .box h3 {
-  font-size: 2rem;
+  font-size: 18px;
   line-height: 1.5;
   color: #492A1A;
 }
 
-.box-container .box p {
-  font-size: 1.5rem;
+.box-container .box .promo-info {
+  font-size: 14px;
   line-height: 1.5;
   color: #784930;
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 
-.box-container .box .quantity {
-  font-size: 12px;
+.box-container .box p {
+  font-size: 16px;
+  line-height: 1.5;
   color: #784930;
   padding: 1rem 0;
 }
 
 .box-container .box .price {
+  font-size: 18px;
+  color: #784930;
+}
+
+.precio {
   font-size: 18px;
   color: #784930;
 }
@@ -500,17 +500,24 @@ section {
 }
 
 /*----------- Products Section -----------*/
-.products .product-slider {
-  padding: 1rem 0;
+.productos__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-.products .product-slider:first-child {
-  margin-bottom: 2rem;
-}
-
-.products .product-slider .box {
+.productos__container .producto-box {
+  width: 250px;
   background: #fff;
   border-radius: .5rem;
+  margin: 1rem;
   text-align: center;
   padding: 3rem 2rem;
   outline-offset: -1rem;
@@ -521,39 +528,29 @@ section {
   transition: .2s linear;
 }
 
-.products .product-slider .box:hover {
+.productos__container .producto-box:hover {
   outline-offset: 0rem;
   outline: 0.2rem solid #784930;
 }
 
-.products .product-slider .box img {
+.productos__container .producto-box img {
   width: 130px;
   height: 110px;
 }
 
-.products .product-slider .box h3 {
+.productos__container .producto-box h3 {
   font-size: 18px;
   color: #492A1A;
 }
 
-.products .product-slider .box p {
+.productos__container .producto-box p {
   font-size: 16px;
   color: #492A1A;
 }
 
-.products .product-slider .box .quantity {
-  font-size: 14px;
-  color: #784930;
-  padding: .5rem 0;
-}
-
-.products .product-slider .box .price {
+.productos__container .producto-box .precio {
   font-size: 18px;
   color: #784930;
-}
-
-.products .product-slider .box .products-btn {
-  padding: .8rem 2rem;
 }
 
 /*----------- Review Section -----------*/

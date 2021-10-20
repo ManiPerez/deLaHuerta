@@ -48,12 +48,11 @@
         </form>
 
         <div class="shopping-cart" id="carrito">
-            <hr>
 
-            <div class="empty-cart">
+            <!-- <div class="empty-cart">
                 <p>No hay productos agregados a tu carrito</p>
                 <div class="checkout-btn"><a href="#vegetales">Continuar comprando</a></div>
-            </div>
+            </div> -->
 
             <!-- <div class="cart-box">
                 <img src="./images/cart-img-1-apio.png" alt="apio">
@@ -63,10 +62,56 @@
                     <span class="quantity">Cant : 1</span>
                 </div>
                 <i class="fas fa-trash-alt"></i>
-            </div> -->
+            </div>
 
-            <!-- <div class="total">Total : $3869</div>
+            <div class="total">Total : $3869</div>
             <div class="checkout-btn"><a href="#">Comprar ahora</a></div> -->
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acción</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="carrito-items"></tbody>
+                <tfoot>
+                  <tr id="carrito-vacio">
+                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                  </tr>
+                </tfoot>
+            </table>
+
+            <template id="template-total">
+                <th scope="row" colspan="2">Total productos</th>
+                <td>10</td>
+                <td>
+                    <button class="btn" id="vaciar-carrito">
+                        vaciar todo
+                    </button>
+                </td>
+                <td class="precio">$ <span>5000</span></td>
+            </template>
+            
+            <template id="template-carrito">
+              <tr>
+                <th scope="row">id</th>
+                <td>nombre</td>
+                <td>1</td>
+                <td>
+                    <button class="btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="btn">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </td>
+                <td>$ <span>0</span></td>
+              </tr>
+            </template>
             
         </div>
 
@@ -120,20 +165,20 @@
     <!-- Features Section ends -->
 
     <!-- Products Section starts -->
-    <section class="products" id="products">
-        <h1 class="heading">Nuestros <span>Vegetales</span></h1>
+    <section class="productos" id="productos">
+        <h1 class="heading">Nuestros <span>Productos</span></h1>
 
-        <div class="rows" id="items">
+        <div class="productos__container" id="productos-items">
                     
         </div>
 
-        <template id="template-card">
+        <template id="template-productos">
 
-            <div class="swiper-slide box">
-                <img src="./images/cart-img-1-apio.png" alt="Apio">
-                <h3>Apio</h3>
-                <p>x atado</p>
-                <div class="price">$50/-</div>
+            <div class="producto-box">
+                <img src="./images/cart-img-1-apio.png" alt="">
+                <h3>nombre</h3>
+                <p>x unidad</p>
+                <div class="precio">precio</div>
                 <a href="#" class="btn">Añadir al carrito</a>
             </div>
 
@@ -141,6 +186,29 @@
 
     </section>
     <!-- Products Section ends -->
+
+    <!-- Promos Section starts -->
+    <section class="promos" id="promos">
+        <h1 class="heading">Nuestras <span>Promos</span></h1>
+
+        <div class="box-container" id="promos-items">           
+        </div>
+
+        <template id="template-promos">
+
+            <div class="box">
+                <img src="./images/cart-img-24-cajon-vegetales.png" alt="">
+                <h3>nombre</h3>
+                <div class="promo-info">decripcion</div>
+                <p>x unidad</p>
+                <div class="precio">precio</div>
+                <a href="#" class="btn">Añadir al carrito</a>
+            </div>
+
+        </template>
+
+    </section>
+    <!-- Promos Section ends -->
 
     <!-- Review Section starts -->
     <section class="review" id="review">
@@ -268,7 +336,13 @@
     <!-- Footer Section ends -->
 
     <!-- SCRIPTS starts-->
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Mis Scripts -->
     <script src="./js/app.js"></script>
+
     <!-- SCRIPTS ends-->
 
 </body>
