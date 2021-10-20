@@ -553,7 +553,16 @@ section {
   color: #784930;
 }
 
+/*----------- Promos Section -----------*/
+.promos {
+  padding: 0 14rem;
+}
+
 /*----------- Review Section -----------*/
+.review {
+  padding: 14rem;
+}
+
 .review .review-slider {
   padding: 1rem;
 }
@@ -735,6 +744,12 @@ section {
   .products-btn {
     padding: .8rem 3rem;
   }
+  .promos {
+    padding: 0 5rem;
+  }
+  .review {
+    padding: 0 5rem;
+  }
   .review .review-slider .box .client {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -782,6 +797,9 @@ section {
     right: 2rem;
     -webkit-transition: .4s linear;
     transition: .4s linear;
+  }
+  .header .review {
+    padding: 1rem;
   }
   .heading {
     font-size: 2.5rem;

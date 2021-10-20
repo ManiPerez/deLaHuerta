@@ -520,8 +520,15 @@ section {
     }
 }
 
+/*----------- Promos Section -----------*/
+.promos {
+    padding: 0 14rem;
+}
+
 /*----------- Review Section -----------*/
 .review {
+    padding: 14rem;
+    
     .review-slider {
         padding: 1rem;
     
@@ -704,7 +711,13 @@ section {
         padding: .8rem 3rem;
     }
 
+    .promos {
+        padding: 0 5rem;
+    }
+
     .review {
+        padding: 0 5rem;
+
         .review-slider {
             .box {
                 .client {
@@ -757,6 +770,10 @@ section {
                 right: 2rem;
                 transition: .4s linear;
             }
+        }
+
+        .review {
+            padding: 1rem;
         }
     }
 
