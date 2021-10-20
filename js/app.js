@@ -49,141 +49,34 @@ window.onscroll = ()=> {
     navbar.classList.remove('active');
 }
 
-// Swiper library code
-
-var swiper = new Swiper(".product-slider", {
-    loop: true,
-    spaceBetween: 20,
-    autoplay: {
-        delay: 7000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      450: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1020: {
-        slidesPerView: 5,
-      },
-    },
-  });
-
-  var swiper = new Swiper(".review-slider", {
-    loop: true,
-    spaceBetween: 20,
-    autoplay: {
-        delay: 7000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      450: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1020: {
-        slidesPerView: 5,
-      },
-    },
-  });
-
 //------------------------------------------------------------------------------------------------------------------//
 
-// SELECTORS
-// const listaVegetales = document.querySelector('#lista-vegetales');
 
-// const listaFrutas = document.querySelector('#lista-frutas');
+// Id de las cards de mis productos que se mostraran en mi HTML:
+const items = document.getElementById('items');
+// Template de las cards de mis productos (accedo a sus elementos con .content)
+const templateCard = document.getElementById('template-card').content;
 
-// const listaPromos = document.querySelector('#lista-promos');
 
-// // LISTENERS
-// document.addEventListener('DOMContentLoaded',()=>{
-//   renderVegetales(vegetales);
-// });
 
-// document.addEventListener('DOMContentLoaded',()=>{
-//   renderFrutas(frutas);
-// });
-
-// document.addEventListener('DOMContentLoaded',()=>{
-//   renderPromos(promos);
-// });
-
-// // DOM HTML
-// // DUDA: cuando coloco => data-id="${vegetal.id} en la etiqueta <button> del boton de Agregar al carrito en la linea 135 (como hizo el profe en clase), el boton no se muestra en mi html
-
-// function renderVegetales(vegetales) {
-//   vegetales.forEach(vegetal => {
-//     const html = `
-//         <div class="swiper-slide box">
-//           <img class="imagen-producto" src="${vegetal.imagen}" alt="${vegetal.nombre}">
-//           <h3>${vegetal.nombre}</h3>
-//           <div class="quantity">${vegetal.cantidad}</div>
-//           <div class="price">${vegetal.precio}</div>
-//           <span data-id="${vegetal.id}></span>
-//           <a href="#" class="btn products-btn addCart">Añadir al carrito</a>
-//         </div>
-//     `
-//     listaVegetales.innerHTML += html;
-//   });
-// }
-
-// function renderFrutas(frutas) {
-//   frutas.forEach(fruta => {
-//     const html = `
-//         <div class="swiper-slide box">
-//           <img class="imagen-producto" src="${fruta.imagen}" alt="${fruta.nombre}">
-//           <h3>${fruta.nombre}</h3>
-//           <div class="quantity">${fruta.cantidad}</div>
-//           <div class="price">${fruta.precio}</div>
-//           <button class="btn products-btn addCart">Añadir al carrito</button>
-//         </div>
-//     `
-//     listaFrutas.innerHTML += html;
-//   });
-// }
-
-// function renderPromos(promos) {
-//   promos.forEach(promo => {
-//     const html = `
-//         <div class="swiper-slide box">
-//           <img class="imagen-producto" src="${promo.imagen}" alt="${promo.nombre}">
-//           <h3>${promo.nombre}</h3>
-//           <div>${promo.descripcion}</div>
-//           <p class="quantity">${promo.cantidad}</p>
-//           <div class="price">${promo.precio}</div>
-//           <button class="btn addCart">Añadir al carrito</button>
-//         </div>
-//     `
-//     listaPromos.innerHTML += html;
-//   });
-// }
-
-//------------------------------------------------------------------------------------------------------------------//
-
-// Leer JSON de productos
+// Esperar a que se ejecute documento HTML antes de cargar el json:
 document.addEventListener('DOMContentLoaded', ()=> {
   fetchData();
 })
-
+// Leer JSON de productos
 const fetchData = async () => {
   try {
     const answer = await fetch('productos.json');
     const data = await answer.json();
-    console.log(data);
+    // console.log(data);
+    pintarCards(data);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
+// Una vez accedo a la info de mis cards "pinto" las cards en mi HTML:
+const pintarCards = data=> {
+  console.log(data);
+}
 
