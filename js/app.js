@@ -230,9 +230,24 @@ const setCarrito = objeto => {
     producto.cantidad = carrito[producto.id].cantidad + 1;
   }
   carrito[producto.id] = {...producto};
-  console.log(carrito);
+  pintarCarrito();
 
 }
 
+// Construyo mi carrito
+const pintarCarrito = ()=> {
+  console.log(carrito);
+  Object.values(carrito).forEach(producto => {
+    templateCarrito.querySelector('th').textContent = producto.id;
+    templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre;
+    templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
+    templateCarrito.querySelector('.btn-plus').dataset.id = producto.id;
+    templateCarrito.querySelector('.btn-minus').dataset.id = producto.id;
+    templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
 
+    const clone = templateCarrito.cloneNode(true);
+    fragment.appendChild(clone);
+  });
+  carritoItems.appendChild(fragment);
+}
 

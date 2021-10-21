@@ -206,15 +206,25 @@ section {
   position: absolute;
   top: 110%;
   right: -110%;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: .5rem;
   -webkit-box-shadow: 0 0.5rem 1.5rem rgba(234, 218, 202, 0.1);
           box-shadow: 0 0.5rem 1.5rem rgba(234, 218, 202, 0.1);
-  width: 35rem;
+  width: auto;
   background: #fff;
 }
 
-.header .shopping-cart .empty-cart {
+.header .shopping-cart .table thead tr th {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 1rem;
+  text-align: center;
+  color: #492A1A;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid #EADACA;
+}
+
+.header .shopping-cart #carrito-vacio {
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
@@ -222,17 +232,13 @@ section {
           justify-content: center;
 }
 
-.header .shopping-cart .empty-cart p {
-  font-size: 1.5rem;
-  padding: 1rem 0;
+.header .shopping-cart #carrito-vacio th {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 2rem;
   text-align: center;
   color: #492A1A;
   margin: 1rem;
-}
-
-.header .shopping-cart .empty-cart .checkout-btn a {
-  width: auto;
-  padding: .8rem 3rem;
 }
 
 .header .shopping-cart .box i {
@@ -309,6 +315,36 @@ section {
   right: 2rem;
   -webkit-transition: .4s linear;
   transition: .4s linear;
+}
+
+.header .shopping-cart .template-carrito .btn-plus {
+  background: #fff;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.header .shopping-cart .template-carrito .btn-plus i {
+  font-size: 2rem;
+  color: #492A1A;
+}
+
+.header .shopping-cart .template-carrito .btn-plus i:hover {
+  color: #689D00;
+}
+
+.header .shopping-cart .template-carrito .btn-minus button {
+  background: #fff;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.header .shopping-cart .template-carrito .btn-minus button i {
+  font-size: 2rem;
+  color: #492A1A;
+}
+
+.header .shopping-cart .template-carrito .btn-minus button i:hover {
+  color: red;
 }
 
 .header .login-form {
@@ -499,6 +535,11 @@ section {
   color: #fff;
 }
 
+/*----------- Features Section -----------*/
+.features {
+  padding: 5rem 14rem;
+}
+
 /*----------- Products Section -----------*/
 .productos__container {
   display: -webkit-box;
@@ -555,12 +596,12 @@ section {
 
 /*----------- Promos Section -----------*/
 .promos {
-  padding: 0 14rem;
+  padding: 5rem 14rem;
 }
 
 /*----------- Review Section -----------*/
 .review {
-  padding: 14rem;
+  padding: 5rem 14rem;
 }
 
 .review .review-slider {
@@ -744,11 +785,14 @@ section {
   .products-btn {
     padding: .8rem 3rem;
   }
+  .features {
+    padding: 0 5rem;
+  }
   .promos {
     padding: 0 5rem;
   }
   .review {
-    padding: 0 5rem;
+    padding: 3rem 5rem;
   }
   .review .review-slider .box .client {
     display: -webkit-box;
@@ -797,6 +841,9 @@ section {
     right: 2rem;
     -webkit-transition: .4s linear;
     transition: .4s linear;
+  }
+  .header .features {
+    padding: 0 1rem;
   }
   .header .review {
     padding: 1rem;

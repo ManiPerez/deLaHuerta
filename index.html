@@ -62,20 +62,20 @@
                 <tbody id="carrito-items"></tbody>
                 <tfoot>
                   <tr id="carrito-vacio">
-                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                    <th scope="row" colspan="5">No tienes productos en tu carrito</th>
                   </tr>
                 </tfoot>
             </table>
 
             <template id="template-total">
                 <th scope="row" colspan="2">Total productos</th>
-                <td>10</td>
+                <td>0</td>
                 <td>
                     <button class="btn" id="vaciar-carrito">
                         vaciar todo
                     </button>
                 </td>
-                <td class="precio">$ <span>5000</span></td>
+                <td class="precio">$ <span>0</span></td>
             </template>
             
             <template id="template-carrito">
@@ -84,10 +84,10 @@
                 <td>nombre</td>
                 <td>1</td>
                 <td>
-                    <button class="btn">
+                    <button class="btn-plus">
                         <i class="fas fa-plus"></i>
                     </button>
-                    <button class="btn">
+                    <button class="btn-minus">
                         <i class="fas fa-minus"></i>
                     </button>
                 </td>

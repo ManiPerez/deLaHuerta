@@ -197,29 +197,40 @@ section {
         position: absolute;
         top: 110%;
         right: -110%;
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: .5rem;
         box-shadow: $box-shasow;
-        width: 35rem;
+        width: auto;
         background: #fff;
 
-        .empty-cart {
+        .table {
+
+            thead {
+                tr {
+                    th {
+                        font-size: 14px;
+                        font-weight: 500;
+                        padding: 0 1rem;
+                        text-align: center;
+                        color: $black;
+                        padding-bottom: .3rem;
+                        border-bottom: 1px solid $bg;
+                    }
+                }
+            }
+        }
+
+        #carrito-vacio {
             align-content: center;
             justify-content: center;
 
-            p {
-                font-size: 1.5rem;
-                padding: 1rem 0;
+            th {
+                font-size: 16px;
+                font-weight: 400;
+                padding: 2rem;
                 text-align: center;
                 color: $black;
                 margin: 1rem;
-            }
-
-            .checkout-btn {
-                a {
-                    width: auto;
-                    padding: .8rem 3rem;
-                }
             }
         }
 
@@ -295,6 +306,36 @@ section {
         &.active {
             right: 2rem;
             transition: .4s linear;
+        }
+
+        .template-carrito {
+            .btn-plus {
+                background: #fff;
+                align-content: center;
+                i {
+                    font-size: 2rem;
+                    color: $black;
+    
+                    &:hover {
+                        color: $green-darker;
+                    }
+                }
+            }
+    
+            .btn-minus {
+                button {
+                    background: #fff;
+                    align-content: center;
+                    i {
+                        font-size: 2rem;
+                        color: $black;
+        
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -472,6 +513,11 @@ section {
     }
 }
 
+/*----------- Features Section -----------*/
+.features {
+    padding: 5rem 14rem;
+}
+
 /*----------- Products Section -----------*/
 .productos {
     &__container {
@@ -522,12 +568,12 @@ section {
 
 /*----------- Promos Section -----------*/
 .promos {
-    padding: 0 14rem;
+    padding: 5rem 14rem;
 }
 
 /*----------- Review Section -----------*/
 .review {
-    padding: 14rem;
+    padding: 5rem 14rem;
     
     .review-slider {
         padding: 1rem;
@@ -589,7 +635,6 @@ section {
 }
 
 /*----------- Footer Section -----------*/
-
 .footer {
     background: url(../images/footer-bg.png);
     background-repeat: no-repeat;
@@ -711,12 +756,16 @@ section {
         padding: .8rem 3rem;
     }
 
+    .features {
+        padding: 0 5rem;
+    }
+
     .promos {
         padding: 0 5rem;
     }
 
     .review {
-        padding: 0 5rem;
+        padding: 3rem 5rem;
 
         .review-slider {
             .box {
@@ -770,6 +819,10 @@ section {
                 right: 2rem;
                 transition: .4s linear;
             }
+        }
+
+        .features {
+            padding: 0 1rem;
         }
 
         .review {
