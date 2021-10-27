@@ -87,6 +87,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
 productosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Agregaste un producto al carrito',
+    showConfirmButton: false,
+    timer: 1500
+  })
 });
 // A traves del atributo data-id capturo el evento "click" en los botones + y - del carrito para aumentar y disminuir la cantidad de productos seleccionados: 
 carritoItems.addEventListener('click', e => {

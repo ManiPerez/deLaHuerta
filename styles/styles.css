@@ -898,11 +898,7 @@ section {
 
 /*----------- Review Section -----------*/
 .review {
-  padding: 5rem 14rem;
-}
-
-.review .review-slider {
-  padding: 1rem;
+  padding: 0 14rem 5rem 14rem;
 }
 
 .review .review-slider .box {

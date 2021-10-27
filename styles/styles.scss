@@ -817,11 +817,9 @@ section {
 
 /*----------- Review Section -----------*/
 .review {
-    padding: 5rem 14rem;
+    padding: 0 14rem 5rem 14rem;
     
     .review-slider {
-        padding: 1rem;
-    
         .box {
             background: #fff;
             border-radius: .5rem;
@@ -875,7 +873,7 @@ section {
                 }
             }
         }
-    }    
+    }
 }
 
 /*----------- Footer Section -----------*/
