@@ -49,56 +49,6 @@ window.onscroll = ()=> {
     navbar.classList.remove('active');
 }
 
-/*------------------------------------------------------------------------------------------------------------------*/
-
-// Swiper library code
-
-var swiper = new Swiper(".product-slider", {
-  loop: true,
-  spaceBetween: 20,
-  autoplay: {
-      delay: 7000,
-      disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    450: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1020: {
-      slidesPerView: 5,
-    },
-  },
-});
-
-var swiper = new Swiper(".review-slider", {
-  loop: true,
-  spaceBetween: 20,
-  autoplay: {
-      delay: 7000,
-      disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    450: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1020: {
-      slidesPerView: 5,
-    },
-  },
-});
-
 /*---------------------------------------------------------------------------------------------------------------*/
 
 // Id de las cards de mis productos que se mostraran en mi HTML:
@@ -108,7 +58,7 @@ const promosItems = document.getElementById('promos-items');
 // Id de las items de mis productos que se mostraran en mi carrito:
 const carritoItems = document.getElementById('carrito-items');
 // Id de mi carrito cuando está vacio:
-const carritoVacio = document.getElementById('carrito-vacio');
+const carritoFooter = document.getElementById('carrito-footer');
 // Template de las cards de mis productos (accedo a sus elementos con .content)
 const templateProductos = document.getElementById('template-productos').content;
 // Template de las cards de mis promos (accedo a sus elementos con .content)
@@ -127,12 +77,22 @@ let carrito = {};
 // Esperar a que se ejecute documento HTML antes de cargar el json:
 document.addEventListener('DOMContentLoaded', ()=> {
   fetchDataProductos();
-})
+  // Almacenar carrito en local storage al actualizar pagina:
+  if (localStorage.getItem('carrito')) {
+    carrito = JSON.parse(localStorage.getItem('carrito'));
+    pintarCarrito();
+  }
+});
 // A traves del atributo data-id capturo el evento "click" en el botón "Agregar al carrito" de la seccion productos 
 productosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
-})
+});
+// A traves del atributo data-id capturo el evento "click" en los botones + y - del carrito para aumentar y disminuir la cantidad de productos seleccionados: 
+carritoItems.addEventListener('click', e => {
+  btnCantidad(e);
+  e.preventDefault();
+});
 
 // Leer JSON de productos
 const fetchDataProductos = async () => {
@@ -149,13 +109,18 @@ const fetchDataProductos = async () => {
 // Esperar a que se ejecute documento HTML antes de cargar el json:
 document.addEventListener('DOMContentLoaded', ()=> {
   fetchDataPromos();
-})
+    // Almacenar carrito en local storage al actualizar pagina:
+    if (localStorage.getItem('carrito')) {
+      carrito = JSON.parse(localStorage.getItem('carrito'));
+      pintarCarrito();
+    }
+});
 
 // A traves del atributo data-id capturo el evento "click" en el botón "Agregar al carrito" de la seccion promos 
 promosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
-})
+});
 
 // Leer JSON de promos
 const fetchDataPromos = async () => {
@@ -176,7 +141,7 @@ const pintarProductos = data => {
     templateProductos.querySelector('img').setAttribute("src",producto.imagen);
     templateProductos.querySelector('h3').textContent = producto.nombre;
     templateProductos.querySelector('p').textContent = producto.xunidad;
-    templateProductos.querySelector('div.precio').textContent = producto.precio;
+    templateProductos.querySelector('span').textContent = producto.precio;
     templateProductos.querySelector('a').dataset.id = producto.id;
 
     // Procedo a la clonación de mi card
@@ -193,9 +158,9 @@ const pintarPromos = data => {
   data.forEach(promo => {
     templatePromos.querySelector('img').setAttribute("src",promo.imagen);
     templatePromos.querySelector('h3').textContent = promo.nombre;
-    templatePromos.querySelector('div.promo-info').textContent = promo.descripcion;
+    templatePromos.querySelector('.promo-info').textContent = promo.descripcion;
     templatePromos.querySelector('p').textContent = promo.xunidad;
-    templatePromos.querySelector('div.precio').textContent = promo.precio;
+    templatePromos.querySelector('span').textContent = promo.precio;
     templatePromos.querySelector('a').dataset.id = promo.id;
 
     // Procedo a la clonación de mi card
@@ -220,9 +185,10 @@ const setCarrito = objeto => {
   // Con la info capturada construimos el objeto Producto
   const producto = {
     id: objeto.querySelector('.btn').dataset.id,
+    imagen: objeto.querySelector('img').src,
     nombre: objeto.querySelector('h3').textContent,
     xunidad: objeto.querySelector('p').textContent,
-    precio: objeto.querySelector('.precio').textContent,
+    precio: objeto.querySelector('span').textContent,
     cantidad: 1
   }
   // Aumento cantidad del producto seleccionado más de una vez
@@ -231,23 +197,120 @@ const setCarrito = objeto => {
   }
   carrito[producto.id] = {...producto};
   pintarCarrito();
-
 }
 
 // Construyo mi carrito
-const pintarCarrito = ()=> {
-  console.log(carrito);
+const pintarCarrito = () => {
+    //Para no sobreescribir la info, reinicia el template:
+  carritoItems.innerHTML = '';
+
   Object.values(carrito).forEach(producto => {
-    templateCarrito.querySelector('th').textContent = producto.id;
-    templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre;
-    templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
-    templateCarrito.querySelector('.btn-plus').dataset.id = producto.id;
-    templateCarrito.querySelector('.btn-minus').dataset.id = producto.id;
-    templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
+    templateCarrito.querySelector('img').src = producto.imagen;
+    templateCarrito.querySelector('.carrito-info h3').textContent = producto.nombre;
+    templateCarrito.querySelector('.carrito-info p').textContent = producto.xunidad;
+    templateCarrito.querySelector('.btn-plus i').dataset.id = producto.id;
+    templateCarrito.querySelector('.cantidad-item p').textContent = producto.cantidad;
+    templateCarrito.querySelector('.btn-minus i').dataset.id = producto.id;
+    templateCarrito.querySelector('spam').textContent = producto.cantidad * producto.precio;
+    templateCarrito.querySelector('.btn-delete i').dataset.id = producto.id;
 
     const clone = templateCarrito.cloneNode(true);
     fragment.appendChild(clone);
   });
   carritoItems.appendChild(fragment);
+
+  pintarTotal();
+
+  //Para guardar la informacion de mi carrito en el localStorage al actualizar la pagina:
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+const pintarTotal = () => {
+  //Para no sobreescribir la info, reinicia el template:
+  carritoFooter.innerHTML = '';
+  //Si el carrito está vacío:
+  if (Object.keys(carrito).length === 0) {
+    carritoFooter.innerHTML = `
+    <div class="carrito-vacio" id="carrito-vacio">
+      <p >No hay productos en tu carrito de compras.</p>
+      <div class="comprar-btn">
+        <a href="#productos">Seguir comprando</a>
+      </div>
+    </div>
+    `;
+    return;
+  }
+
+  const nCantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad ,0);
+  const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0);
+  
+  templateTotal.querySelector('.total-items p spam').textContent = nCantidad;
+  templateTotal.querySelector('.total-precio p spam').textContent = nPrecio;
+
+  const clone = templateTotal.cloneNode(true);
+  fragment.appendChild(clone);
+  carritoFooter.appendChild(fragment);
+
+  const vaciarCarrito = document.getElementById('vaciar-carrito');
+  vaciarCarrito.addEventListener('click', () => {
+    carrito = {};
+    pintarCarrito();
+  });
+
+  const finalizarCompra = document.getElementById('comprar-btn');
+  finalizarCompra.addEventListener('click', () => {
+    carrito = {};
+    pintarCarrito();
+    carritoFooter.innerHTML = `
+    <div class="compra-modal">
+      <div class="close-btn">
+      <a href="./index.html"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="comprar-body">
+          <h4>Se registró tu compra <i class="fas fa-check"></i></h4>
+          <p>Te enviamos el resumen a tu casilla de mail</p>
+          <p>Te avisaremos cuando tu entrega esté en camino</p>
+          <p>Gracias por elegirnos!</p>
+          <div class="comprar-img">
+              <img src="./images/finish-shop-img.png" alt="Imagen vegetales">
+          </div>
+      </div>
+    </div>
+    `;
+    return;
+  })
+}
+
+const btnCantidad = e => {
+  // Aumentar cantidad
+  if (e.target.classList.contains('fa-plus-square')) {
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad++;
+    carrito[e.target.dataset.id] = {...producto};
+    pintarCarrito();
+  }
+  // Disminuir cantidad
+  if (e.target.classList.contains('fa-minus-square')) {
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad--;
+    
+    if (producto.cantidad === 0) {
+      delete carrito[e.target.dataset.id];
+    }
+
+    pintarCarrito();
+  }
+  // Eliminar producto
+  if (e.target.classList.contains('fa-trash-alt')) {
+    const producto = carrito[e.target.dataset.id];
+    delete carrito[e.target.dataset.id];
+
+    pintarCarrito();
+  }
+
+  e.stopPropagation();
+}
+
+
+
 

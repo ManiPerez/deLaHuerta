@@ -31,17 +31,18 @@
         <nav class="navbar">
             <a href="#home">Inicio</a>
             <a href="#features">Servicios</a>
-            <a href="#products">Productos</a>
-            <a href="#categories">Categorias</a>
-            <a href="reviews">Opiniones</a>
-            <a href="tours">Tours</a>
+            <a href="#productos">Productos</a>
+            <a href="#promos">Promos</a>
+            <a href="#review">Opiniones</a>
         </nav>
+
         <div class="icons">
             <i class="fas fa-bars" id="menu-btn"></i>
             <i class="fas fa-search" id="search-btn"></i>
             <i class="fas fa-shopping-basket" id="cart-btn"></i>
             <i class="fas fa-user" id="login-btn"></i>
         </div>
+        
         <form action="" class="search-form">
             <input type="search" id="search-box" placeholder="Buscar...">
             <label for="search-box" class="fas fa-search"></label>
@@ -49,50 +50,62 @@
 
         <div class="shopping-cart" id="carrito">
 
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Acción</th>
-                    <th scope="col">Total</th>
-                  </tr>
-                </thead>
-                <tbody id="carrito-items"></tbody>
-                <tfoot>
-                  <tr id="carrito-vacio">
-                    <th scope="row" colspan="5">No tienes productos en tu carrito</th>
-                  </tr>
-                </tfoot>
-            </table>
+            <div class="carrito-lista">
+                <div id="carrito-items">
+                </div>
+                <div id="carrito-footer">
+                    <div class="carrito-vacio">
+                        <p >No hay productos en tu carrito de compras.</p>
+                        <a href="#productos">Seguir comprando</a>
+                    </div>
+                </div>
+            </div>
 
             <template id="template-total">
-                <th scope="row" colspan="2">Total productos</th>
-                <td>0</td>
-                <td>
-                    <button class="btn" id="vaciar-carrito">
-                        vaciar todo
-                    </button>
-                </td>
-                <td class="precio">$ <span>0</span></td>
+                <div class="carrito-total">
+                    <div class="total-info">
+                        <h3>Total productos:</h3>
+                        <div class="total-items">
+                            <p>Cantidad: <spam>0</spam></p>
+                        </div>
+                    </div>
+                    <div class="total-precio">
+                        <p>$<spam>0</spam></p>
+                    </div>
+                    <div class="vaciar-carrito" id="vaciar-carrito">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div class="comprar-btn">
+                        <button id="comprar-btn">Finalizar compra</button>
+                    </div>
+                </div>
             </template>
             
             <template id="template-carrito">
-              <tr>
-                <th scope="row">id</th>
-                <td>nombre</td>
-                <td>1</td>
-                <td>
-                    <button class="btn-plus">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button class="btn-minus">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </td>
-                <td>$ <span>0</span></td>
-              </tr>
+              <div class="carrito-items">
+                    <div class="carrito-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="carrito-info">
+                        <h3>nombre</h3>
+                        <p>xunidad</p>
+                    </div>
+                    <div class="quantity-btns">
+                        <div class="btn-plus">
+                            <i class="far fa-plus-square"></i>
+                        </div>
+                        <div class="cantidad-item">
+                            <p>0</p>
+                        </div>
+                        <div class="btn-minus">
+                            <i class="far fa-minus-square"></i>
+                        </div>
+                    </div>
+                    <div class="item-precio"><p>$<spam>0</spam></p></div>
+                    <div class="btn-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+              </div>
             </template>
             
         </div>
@@ -151,16 +164,16 @@
         <h1 class="heading">Nuestros <span>Productos</span></h1>
 
         <div class="productos__container" id="productos-items">
-                    
+            <!-- Template Productos -->        
         </div>
 
         <template id="template-productos">
 
             <div class="producto-box">
-                <img src="./images/cart-img-1-apio.png" alt="">
+                <img src="" alt="">
                 <h3>nombre</h3>
                 <p>x unidad</p>
-                <div class="precio">precio</div>
+                <div class="precio">$<span>precio</span></div>
                 <a href="#" class="btn">Añadir al carrito</a>
             </div>
 
@@ -183,7 +196,7 @@
                 <h3>nombre</h3>
                 <div class="promo-info">decripcion</div>
                 <p>x unidad</p>
-                <div class="precio">precio</div>
+                <div class="precio">$<span>precio</span></div>
                 <a href="#" class="btn">Añadir al carrito</a>
             </div>
 
@@ -317,15 +330,18 @@
 
     <!-- Footer Section ends -->
 
-    <!-- SCRIPTS starts-->
+    <!-------- SCRIPTS starts -------->
 
     <!-- Swiper -->
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> 
+
+    <!-- JS Libraries -->
+    <script src="./js/libraries.js"></script>
 
     <!-- Mis Scripts -->
     <script src="./js/app.js"></script>
 
-    <!-- SCRIPTS ends-->
+    <!-------- SCRIPTS ends -------->
 
 </body>
 </html>
