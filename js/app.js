@@ -71,6 +71,20 @@ const templateCarrito = document.getElementById('template-carrito').content;
 const fragment = document.createDocumentFragment();
 // Creo el objeto carrito para llenar con mi lista de productos
 let carrito = {};
+// Creo el objeto busqueda para llenar con los nombres de mis productos
+let busqueda = {};
+
+// Adjunto evento para cuando el usuario envíe el formulario
+$('form').on('submit', function(e) {
+    
+  // Evitar que la página se vuelva a cargar
+  e.preventDefault();
+  
+  // Establecer el intervalo de salida de texto al valor de la primera entrada
+  let $input = $(this).find('input');
+  let input = $input.val();
+  $('#text-output').text(input);
+});
 
 
 
@@ -87,14 +101,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
 productosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Agregaste un producto al carrito',
-    showConfirmButton: false,
-    timer: 1500
-  })
 });
+
+
 // A traves del atributo data-id capturo el evento "click" en los botones + y - del carrito para aumentar y disminuir la cantidad de productos seleccionados: 
 carritoItems.addEventListener('click', e => {
   btnCantidad(e);
@@ -317,6 +326,11 @@ const btnCantidad = e => {
 
   e.stopPropagation();
 }
+
+
+// jQuery
+
+
 
 
 

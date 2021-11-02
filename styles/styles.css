@@ -11,8 +11,6 @@
   outline: none;
   border: none;
   text-decoration: none;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
 }
 
 html {
@@ -519,7 +517,7 @@ section {
   padding: 1rem 0;
 }
 
-.header .shopping-cart .carrito-total .comprar-btn button {
+.header .shopping-cart .carrito-total .comprar-btn a {
   text-align: center;
   padding: .8rem 8rem;
   font-size: 14px;
@@ -530,7 +528,7 @@ section {
   background: none;
 }
 
-.header .shopping-cart .carrito-total .comprar-btn button:hover {
+.header .shopping-cart .carrito-total .comprar-btn a:hover {
   background: #96CC39;
   color: #fff;
 }
@@ -704,6 +702,23 @@ section {
 .header .login-form .logIn-btn:hover {
   background: #96CC39;
   color: #fff;
+}
+
+.header .login-form .template-logIn {
+  padding: 1rem;
+}
+
+.header .login-form .template-logIn h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #bb9e80;
+  padding-bottom: .5rem;
+}
+
+.header .login-form .template-logIn p {
+  font-size: 14px;
+  color: #bb9e80;
+  padding-bottom: .5rem;
 }
 
 .box-container {
@@ -889,6 +904,13 @@ section {
 .productos__container .producto-box .precio {
   font-size: 18px;
   color: #492A1A;
+}
+
+.productos__container .producto-box .added-to-cart {
+  font-size: 15px;
+  color: #689D00;
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 /*----------- Promos Section -----------*/

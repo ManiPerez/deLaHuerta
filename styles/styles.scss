@@ -16,7 +16,6 @@
     outline: none;
     border: none;
     text-decoration: none;
-    transition: all .2s linear;
 }
 
 html {
@@ -457,7 +456,7 @@ section {
                 justify-content: center;
                 padding: 1rem 0;
 
-                button {
+                a {
                     text-align: center;
                     padding: .8rem 8rem;
                     font-size: 14px;
@@ -642,6 +641,23 @@ section {
                 color: #fff;
             }
         }
+
+        .template-logIn {
+            padding: 1rem;
+
+            h4 {
+                font-size: 16px;
+                font-weight: 500;
+                color: $black-lighter;
+                padding-bottom: .5rem;
+            }
+
+            p {
+                font-size: 14px;
+                color: $black-lighter;
+                padding-bottom: .5rem;
+            }
+        }
     }
 }
 
@@ -805,6 +821,14 @@ section {
             .precio {
                 font-size: 18px;
                 color: $black;
+            }
+
+            .added-to-cart {
+                font-size: 15px;
+                color: $green-darker;
+                font-weight: 400;
+                margin-top: 1rem;
+                // display: none;
             }
         }
     }

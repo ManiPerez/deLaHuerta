@@ -18,14 +18,14 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
     <!-- CSS styles -->
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 
     <title>deLaHuerta - Frutas y Verduras Orgánicas</title>
 </head>
 <body>
     <!-- Header section starts -->
     <header class="header">
-        <a href="./index.html" class="logo"><i class="fas fa-seedling"></i> deLa<span>H</span>uerta</a>
+        <a href="../index.html" class="logo"><i class="fas fa-seedling"></i> deLa<span>H</span>uerta</a>
 
         <nav class="navbar">
             <a href="#home">Inicio</a>
@@ -75,7 +75,7 @@
                         <i class="fas fa-trash-alt"></i>
                     </div>
                     <div class="comprar-btn">
-                        <a href="#" id="comprar-btn">Finalizar compra</a>
+                        <button id="comprar-btn">Finalizar compra</button>
                     </div>
                 </div>
             </template>
@@ -148,21 +148,21 @@
         <h1 class="heading">Nuestros <span>Servicios</span></h1>
         <div class="box-container">
             <div class="box">
-                <img src="./images/features-img-1.png" alt="Canasta de vegetales y frutas">
+                <img src="../images/features-img-1.png" alt="Canasta de vegetales y frutas">
                 <h3>Frescos y orgánicos</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
             <div class="box">
-                <img src="./images/features-img-2.png" alt="Delivery a domicilio">
+                <img src="../images/features-img-2.png" alt="Delivery a domicilio">
                 <h3>Envío a domicilio</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
             <div class="box">
-                <img src="./images/features-img-3.png" alt="Medios de pago">
+                <img src="../images/features-img-3.png" alt="Medios de pago">
                 <h3>Todos los medios de pago</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="#" class="btn">Leer más</a>
@@ -187,6 +187,7 @@
                 <p>x unidad</p>
                 <div class="precio">$<span>precio</span></div>
                 <a href="#" class="btn" id="add-toast">Añadir al carrito</a>
+                <!-- <h5 class="added-to-cart">Agregado al carrito <i class="fas fa-check"></i></h5> -->
             </div>
 
         </template>
@@ -204,7 +205,7 @@
         <template id="template-promos">
 
             <div class="box">
-                <img src="./images/cart-img-24-cajon-vegetales.png" alt="">
+                <img src="../images/cart-img-24-cajon-vegetales.png" alt="">
                 <h3>nombre</h3>
                 <div class="promo-info">decripcion</div>
                 <p>x unidad</p>
@@ -228,7 +229,7 @@
                 <div class="swiper-slide box">
                     <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
                     <div class="client">
-                        <img src="./images/cliente-1.jpeg" alt="cliente">
+                        <img src="../images/cliente-1.jpeg" alt="cliente">
                         <div class="nameStars">
                             <h3>Mabel Díaz</h3>
                             <div class="stars">
@@ -245,7 +246,7 @@
                 <div class="swiper-slide box">
                     <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
                     <div class="client">
-                        <img src="./images/cliente-2.jfif" alt="cliente">
+                        <img src="../images/cliente-2.jfif" alt="cliente">
                         <div class="nameStars">
                             <h3>Martín López</h3>
                             <div class="stars">
@@ -262,7 +263,7 @@
                 <div class="swiper-slide box">
                     <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
                     <div class="client">
-                        <img src="./images/cliente-3.jpg" alt="cliente">
+                        <img src="../images/cliente-3.jpg" alt="cliente">
                         <div class="nameStars">
                             <h3>Ana García</h3>
                             <div class="stars">
@@ -279,7 +280,7 @@
                 <div class="swiper-slide box">
                     <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quaerat similique earum doloribus."</p>
                     <div class="client">
-                        <img src="./images/cliente-4.jpg" alt="cliente">
+                        <img src="../images/cliente-4.jpg" alt="cliente">
                         <div class="nameStars">
                             <h3>Alex Suárez</h3>
                             <div class="stars">
@@ -335,7 +336,7 @@
                 <p>Suscríbete para no perderte nuestras novedades</p>
                 <input type="email" placeholder="tu casilla de correo" class="email">
                 <input type="submit" placeholder="suscríbete" class="email">
-                <img src="./images/payments.png" alt="medios de pago" class="payment-img">
+                <img src="../images/payments.png" alt="medios de pago" class="payment-img">
             </div>
         </div>
         <div class="credit">Creada por <span>Magdalena Pérez diseñadora</span> | Todos los derechos reservados</div>
@@ -344,13 +345,6 @@
     <!-- Footer Section ends -->
 
     <!-------- SCRIPTS starts -------->
-
-    <!-- Swiper -->
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Toast script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
