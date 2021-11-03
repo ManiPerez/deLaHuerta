@@ -646,38 +646,9 @@ section {
   width: 30rem;
   -webkit-box-shadow: 0 0.5rem 1.5rem rgba(234, 218, 202, 0.1);
           box-shadow: 0 0.5rem 1.5rem rgba(234, 218, 202, 0.1);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: .5rem;
   background: #fff;
-  text-align: center;
-}
-
-.header .login-form h3 {
-  color: #492A1A;
-  font-size: 2.3rem;
-  text-transform: uppercase;
-}
-
-.header .login-form .box {
-  width: 100%;
-  margin: .7rem 0;
-  background: #EADACA;
-  border-radius: .5rem;
-  padding: 1rem;
-  font-size: 1.6rem;
-  color: #492A1A;
-  text-transform: none;
-}
-
-.header .login-form p {
-  font-size: 1.4rem;
-  padding: .5rem 0;
-  color: #784930;
-}
-
-.header .login-form p a {
-  color: #689D00;
-  text-decoration: underline;
 }
 
 .header .login-form.active {
@@ -686,39 +657,178 @@ section {
   transition: .4s linear;
 }
 
-.header .login-form .logIn-btn {
-  margin-top: 1rem;
-  display: inline-block;
-  text-align: center;
-  padding: .8rem 3rem;
+.header .tabs-container {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+
+.header .tabs-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header .tabs-container li a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+  background: #EADACA;
+  color: #492A1A;
   font-size: 1.5rem;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.header .tabs-container li a:hover {
+  background: #96CC39;
+  color: #fff;
+}
+
+.header .tabs-container .actived a {
+  background: #96CC39;
+  color: #fff;
+}
+
+.header .tab-content > div:last-child {
+  display: none;
+}
+
+.header h4 {
+  font-size: 2rem;
+  text-align: center;
+  color: #492A1A;
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+}
+
+.header label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: #784930;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 1.5rem;
+}
+
+.header label .req {
+  margin: 2px;
+  color: #96CC39;
+}
+
+.header label.actived {
+  -webkit-transform: translateY(35px);
+          transform: translateY(35px);
+  left: 13px;
+  font-size: 1rem;
+}
+
+.header label.actived .req {
+  opacity: 0;
+}
+
+.header label .highlight {
+  color: #492A1A;
+}
+
+.header input {
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: .5rem 1rem;
+  background: none;
+  border-bottom: 1px solid #EADACA;
+  color: #492A1A;
+  border-radius: .3rem;
+}
+
+.header input:focus {
+  outline: none;
+  border-bottom: 0.5px solid #bb9e80;
+}
+
+.header .input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.header .fila-arriba:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header .fila-arriba div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.header .fila-arriba div:last-child {
+  margin: 0;
+}
+
+.header .forgot-password {
+  text-align: right;
+  margin-top: -1rem;
+  margin-bottom: .5rem;
+}
+
+.header .forgot-password a {
+  color: #689D00;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+
+.header .forgot-password a:hover {
+  color: #96CC39;
+}
+
+.header .logIn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.header .logIn-container .logIn-btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 1rem;
+  text-align: center;
+  padding: .8rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
   border-radius: .5rem;
-  border: 0.2rem solid #492A1A;
+  border: 0.1rem solid #492A1A;
   color: #492A1A;
   cursor: pointer;
   background: none;
 }
 
-.header .login-form .logIn-btn:hover {
+.header .logIn-container .logIn-btn:hover, .header .logIn-container .logIn-btn:focus {
   background: #96CC39;
   color: #fff;
 }
 
-.header .login-form .template-logIn {
-  padding: 1rem;
-}
-
-.header .login-form .template-logIn h4 {
-  font-size: 16px;
-  font-weight: 500;
-  color: #bb9e80;
-  padding-bottom: .5rem;
-}
-
-.header .login-form .template-logIn p {
-  font-size: 14px;
-  color: #bb9e80;
-  padding-bottom: .5rem;
+.header .logIn-container .button-block {
+  display: block;
+  width: 100%;
 }
 
 .box-container {

@@ -74,18 +74,6 @@ let carrito = {};
 // Creo el objeto busqueda para llenar con los nombres de mis productos
 let busqueda = {};
 
-// Adjunto evento para cuando el usuario envíe el formulario
-$('form').on('submit', function(e) {
-    
-  // Evitar que la página se vuelva a cargar
-  e.preventDefault();
-  
-  // Establecer el intervalo de salida de texto al valor de la primera entrada
-  let $input = $(this).find('input');
-  let input = $input.val();
-  $('#text-output').text(input);
-});
-
 
 
 // Esperar a que se ejecute documento HTML antes de cargar el json:
@@ -327,8 +315,49 @@ const btnCantidad = e => {
   e.stopPropagation();
 }
 
+/*-------------------------------------------------------------------------------------------------------*/
 
-// jQuery
+// LOG IN formulario > jQuery animation
+
+$(document).ready(function() {
+  $("#user-info").find("input, textarea").on("keyup blur focus", function(e) {
+    let $this = $(this),
+        label = $this.prev("label");
+
+        if (e.type === "keyup") {
+          if($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.addClass("actived highlight");
+          }
+        } else if (e.type === "blur") {
+          if ($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.removeClass("highlight");
+          }
+        } else if (e.type === "focus") {
+          if ($this.val() === "") {
+            label.removeClass("highlight");
+          } else if ($this.val() !== "") {
+            label.addClass("highlight");
+          }
+        }
+  });
+
+  $(".tab a").on("click", function(e) {
+    e.preventDefault();
+
+    $(this).parent().addClass("actived");
+    $(this).parent().siblings().removeClass("actived");
+
+    target = $(this).attr("href");
+
+    $(".tab-content > div").not(target).hide();
+
+    $(target).fadeIn(600);
+  })
+})
 
 
 

@@ -585,78 +585,177 @@ section {
         right: -110%;
         width: 30rem;
         box-shadow: $box-shasow;
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: .5rem;
         background: #fff;
-        text-align: center;
-
-        h3 {
-            color: $black;
-            font-size: 2.3rem;
-            text-transform: uppercase;
-
-        }
-
-        .box {
-            width: 100%;
-            margin: .7rem 0;
-            background: $bg;
-            border-radius: .5rem;
-            padding: 1rem;
-            font-size: 1.6rem;
-            color: $black;
-            text-transform: none;
-        }
-
-        p {
-            font-size: 1.4rem;
-            padding: .5rem 0;
-            color: $light-color;
-
-            a {
-                color: $green-darker;
-                text-decoration: underline;
-            }
-        }
 
         &.active {
             right: 2rem;
             transition: .4s linear;
         }
+    }
 
-        .logIn-btn {
-            margin-top: 1rem;
-            display: inline-block;
-            text-align: center;
-            padding: .8rem 3rem;
-            font-size: 1.5rem;
-            border-radius: .5rem;
-            border: .2rem solid $black;
+    .tabs-container {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            padding: 1rem;
+            background: $bg;
             color: $black;
+            font-size: 1.5rem;
+            float: left;
+            width: 50%;
+            text-align: center;
             cursor: pointer;
-            background: none;
-        
+            transition: .5s ease;
+
             &:hover {
                 background: $green;
                 color: #fff;
             }
         }
 
-        .template-logIn {
-            padding: 1rem;
+        .actived a {
+            background: $green;
+            color: #fff;
+        }
+    }
 
-            h4 {
-                font-size: 16px;
-                font-weight: 500;
-                color: $black-lighter;
-                padding-bottom: .5rem;
-            }
+    .tab-content > div:last-child {
+        display: none;
+    }
 
-            p {
-                font-size: 14px;
-                color: $black-lighter;
-                padding-bottom: .5rem;
+    h4 {
+        font-size: 2rem;
+        text-align: center;
+        color: $black;
+        font-weight: 500;
+        margin: 0 0 1.5rem;
+    }
+
+    label {
+        position: absolute;
+        transform: translateY(6px);
+        left: 13px;
+        color: $light-color;
+        transition: all .25s ease;
+        backface-visibility: hidden;
+        pointer-events: none;
+        font-size: 1.5rem;
+
+        .req {
+            margin: 2px;
+            color: $green;
+        }
+    }
+
+    label.actived {
+        transform: translateY(35px);
+        left: 13px;
+        font-size: 1rem;
+
+        .req {
+            opacity: 0;
+        }
+    }
+
+    label .highlight {
+        color: $black;
+    }
+
+    input {
+        font-size: 1.5rem;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: .5rem 1rem;
+        background: none;
+        border-bottom: 1px solid $bg;
+        color: $black;
+        border-radius: .3rem;
+
+        &:focus {
+            outline: none;
+            border-bottom: .5px solid $black-lighter;
+        }
+    }
+
+    .input-container {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .fila-arriba {
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        div {
+            float: left;
+            width: 48%;
+            margin-right: 4%;
+
+            &:last-child {
+                margin: 0;
             }
+        }
+    }
+
+    .forgot-password {
+        text-align: right;
+        margin-top: -1rem;
+        margin-bottom: .5rem;
+        
+        a {
+            color: $green-darker;
+            font-size: 1.2rem;
+            margin: 1rem;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .logIn-container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .logIn-btn {
+            align-self: center;
+            margin: 1rem;
+            text-align: center;
+            padding: .8rem 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            border-radius: .5rem;
+            border: .1rem solid $black;
+            color: $black;
+            cursor: pointer;
+            background: none;
+        
+            &:hover , &:focus {
+                background: $green;
+                color: #fff;
+            }
+        }
+
+        .button-block {
+            display: block;
+            width: 100%;
         }
     }
 }
