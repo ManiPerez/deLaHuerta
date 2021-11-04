@@ -67,7 +67,7 @@ const templatePromos = document.getElementById('template-promos').content;
 const templateTotal = document.getElementById('template-total').content;
 // Template del carrito armado
 const templateCarrito = document.getElementById('template-carrito').content;
-// Ocupo un fragment (no genera reflow, xq no se pinta en el DOM) para todas las cards que quiero pintar
+// Ocupo un fragment (para no generar reflow, xq no se pinta en el DOM) para almacenar todas las cards que quiero pintar
 const fragment = document.createDocumentFragment();
 // Creo el objeto carrito para llenar con mi lista de productos
 let carrito = {};
@@ -89,6 +89,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
 productosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
+  // Mostrar alert al agregar un producto al carrito
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Producto agregado',
+    showConfirmButton: false,
+    timer: 1500
+  });
 });
 
 
@@ -124,6 +132,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
 promosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
+  // Mostrar alert al agregar un producto al carrito
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Producto agregado',
+    showConfirmButton: false,
+    timer: 1500
+  });
 });
 
 // Leer JSON de promos
@@ -314,6 +330,50 @@ const btnCantidad = e => {
 
   e.stopPropagation();
 }
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+// LOG IN formulario > jQuery animation
+
+$(document).ready(function() {
+  $("#user-info").find("input, textarea").on("keyup blur focus", function(e) {
+    let $this = $(this),
+        label = $this.prev("label");
+
+        if (e.type === "keyup") {
+          if($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.addClass("actived highlight");
+          }
+        } else if (e.type === "blur") {
+          if ($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.removeClass("highlight");
+          }
+        } else if (e.type === "focus") {
+          if ($this.val() === "") {
+            label.removeClass("highlight");
+          } else if ($this.val() !== "") {
+            label.addClass("highlight");
+          }
+        }
+  });
+
+  $(".tab a").on("click", function(e) {
+    e.preventDefault();
+
+    $(this).parent().addClass("actived");
+    $(this).parent().siblings().removeClass("actived");
+
+    target = $(this).attr("href");
+
+    $(".tab-content > div").not(target).hide();
+
+    $(target).fadeIn(600);
+  })
+})
 
 /*-------------------------------------------------------------------------------------------------------*/
 
