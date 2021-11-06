@@ -169,10 +169,10 @@ section {
             height: 100%;
             width: 100%;
             background: none;
-            text-transform: none;
             font-size: 1.6rem;
             color: $black;
             padding: 0 1.5rem;
+            left: 1rem;
         }
 
         label {
@@ -180,6 +180,7 @@ section {
             padding-right: 1.5rem;
             color: $black;
             cursor: pointer;
+            top: .5rem;
 
             &:hover {
                 color: $green;

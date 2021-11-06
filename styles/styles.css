@@ -177,10 +177,10 @@ section {
   height: 100%;
   width: 100%;
   background: none;
-  text-transform: none;
   font-size: 1.6rem;
   color: #492A1A;
   padding: 0 1.5rem;
+  left: 1rem;
 }
 
 .header .search-form label {
@@ -188,6 +188,7 @@ section {
   padding-right: 1.5rem;
   color: #492A1A;
   cursor: pointer;
+  top: .5rem;
 }
 
 .header .search-form label:hover {
