@@ -42,6 +42,7 @@ document.querySelector('#menu-btn').onclick = ()=> {
     loginForm.classList.remove('active');
 }
 
+// Al scrolear la pantalla se oculta el Carrito, el Buscador y el Log In:
 window.onscroll = ()=> {
     searchForm.classList.remove('active');
     shoppingCart.classList.remove('active');
@@ -89,14 +90,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 productosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
-  // Mostrar alert al agregar un producto al carrito
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Producto agregado',
-    showConfirmButton: false,
-    timer: 1500
-  });
 });
 
 
@@ -132,14 +125,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 promosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
-  // Mostrar alert al agregar un producto al carrito
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Producto agregado',
-    showConfirmButton: false,
-    timer: 1500
-  });
 });
 
 // Leer JSON de promos
@@ -197,6 +182,15 @@ const pintarPromos = data => {
 const addCarrito = e => {
   if (e.target.classList.contains('btn')) {
     setCarrito(e.target.parentElement);
+
+    // Mostrar alert al agregar un producto al carrito
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto agregado',
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
   e.stopPropagation();
 }
