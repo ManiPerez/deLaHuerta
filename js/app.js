@@ -412,9 +412,3 @@ $(document).ready(function() {
     $(target).fadeIn(600);
   })
 })
-
-
-
-
-
-
