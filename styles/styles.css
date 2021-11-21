@@ -1101,6 +1101,7 @@ section {
 
 /*----------- Footer Section -----------*/
 .footer {
+  padding: 3rem 4rem 1rem 4rem;
   background: url(../images/footer-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1185,6 +1186,21 @@ section {
 }
 
 .footer .credit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.footer .credit p {
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
@@ -1193,7 +1209,34 @@ section {
   color: #96CC39;
 }
 
-.footer .credit span {
+.footer .credit p span {
+  color: #CEFA85;
+}
+
+.footer .credit__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.footer .credit__links a {
+  color: #96CC39;
+  padding: 1rem 0;
+}
+
+.footer .credit__links a i {
+  font-size: 2.3rem;
+  padding-right: 1.5rem;
+}
+
+.footer .credit__links a:hover {
   color: #CEFA85;
 }
 

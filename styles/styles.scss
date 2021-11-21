@@ -1002,6 +1002,7 @@ section {
 
 /*----------- Footer Section -----------*/
 .footer {
+    padding: 3rem 4rem 1rem 4rem;
     background: url(../images/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1091,15 +1092,43 @@ section {
     }
 
     .credit {
-        text-align: center;
-        margin-top: 2rem;
-        padding: 1rem;
-        padding-top: 2.5rem;
-        font-size: 1.5rem;
-        color: $green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        
+        p {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            padding-top: 2.5rem;
+            font-size: 1.5rem;
+            color: $green;
+    
+            span {
+                color: $green-lighter;
+            }
+        }
 
-        span {
-            color: $green-lighter;
+        &__links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        
+            a {
+                color: $green;
+                padding: 1rem 0;
+    
+                i {
+                    font-size: 2.3rem;
+                    padding-right: 1.5rem;
+                }
+    
+                &:hover {
+                    color: $green-lighter;
+                }
+            }
         }
     }
 }

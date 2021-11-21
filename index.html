@@ -22,6 +22,8 @@
 
     <title>deLaHuerta - Frutas y Verduras Orgánicas</title>
 </head>
+
+
 <body>
     <!-- Header section starts -->
     <header class="header">
@@ -43,8 +45,27 @@
         </div>
         
         <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="Buscar...">
+            <input type="text" name="search" id="search-box" placeholder="Buscar...">
             <label for="search-box"></label>
+
+            <div class="search-item" id="search-item">
+                <!-- Search Item template -->
+            </div>
+
+            <template id="template-search-item">
+                <div class="carrito-items">
+                      <div class="carrito-img">
+                          <img src="" alt="">
+                      </div>
+                      <div class="carrito-info">
+                          <h3>nombre</h3>
+                          <p>xunidad</p>
+                      </div>
+                      <div class="item-precio"><p>$<spam>0</spam></p></div>
+                      <div class="sum-cart-btn"><i class="fas fa-shopping-basket" id="cart-btn"></i></div>
+                </div>
+            </template>
+
         </form>
 
         <div class="shopping-cart" id="carrito">
@@ -350,7 +371,7 @@
         <div class="footer__box-container">
             <div class="footer-box">
                 <h3>De La Huerta <i class="fas fa-shopping-basket"></i></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus, beatae dolores.</p>
+                <p>Productos orgánicos hechos con amor. Directo de la huerta a tu casa!</p>
                 <div class="share">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -361,20 +382,19 @@
 
             <div class="footer-box">
                 <h3>Contactanos</h3>
-                <a href="#" class="links"><i class="fas fa-phone"></i> 221-0000001</a>
-                <a href="#" class="links"><i class="fas fa-phone"></i> 221-0000002</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 123-444555</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i> 123-666777</a>
                 <a href="#" class="links"><i class="fas fa-envelope"></i> delahuerta@gmail.com</a>
-                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Calle 100 N100, La Plata, Buenos Aires</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i> Calle 100 N100, Buenos Aires</a>
             </div>
 
             <div class="footer-box">
                 <h3>Atajos</h3>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Inicio</a>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Servicios</a>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Vegetales</a>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Frutas</a>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Promos</a>
-                <a href="#" class="links"><i class="fas fa-arrow-right"></i>Opiniones Clientes</a>
+                <a href="#top" class="links"><i class="fas fa-arrow-right"></i>Inicio</a>
+                <a href="#productos" class="links"><i class="fas fa-arrow-right"></i>Servicios</a>
+                <a href="#productos" class="links"><i class="fas fa-arrow-right"></i>Vegetales</a>
+                <a href="#productos" class="links"><i class="fas fa-arrow-right"></i>Frutas</a>
+                <a href="#productos" class="links"><i class="fas fa-arrow-right"></i>Promos</a>
             </div>
 
             <div class="footer-box">
@@ -385,7 +405,17 @@
                 <img src="./images/payments.png" alt="medios de pago" class="payment-img">
             </div>
         </div>
-        <div class="credit">Creada por <span>Magdalena Pérez diseñadora</span> | Todos los derechos reservados</div>
+        <div class="credit">
+            <p>Designed and coded by <span>Magdalena Inés Pérez</span></p>
+            <div class="credit__links">
+                <a href="https://www.linkedin.com/in/magdalena-ines-perez/" target="_blank">
+                    <i class="fab fa-linkedin"></i></i>
+                </a>
+                <a href="https://github.com/ManiPerez" target="_blank">
+                    <i class="fab fa-github-square"></i></i>
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer Section ends -->

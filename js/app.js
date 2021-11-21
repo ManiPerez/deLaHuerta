@@ -412,3 +412,20 @@ $(document).ready(function() {
     $(target).fadeIn(600);
   })
 })
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+// SEARCH formulario usando jQuery
+
+$(document).ready(function(){
+  $('#search-box').keyup(function(){
+    search_box($(this).val());
+  });
+
+  function search_box (value) {
+    $('#template-search-item').each(function() {
+      
+    })
+
+  }
+})
