@@ -20,6 +20,7 @@ document.querySelector('#cart-btn').onclick = ()=> {
     navbar.classList.remove('active');
 }
 
+
 // Log In: desocultar, ocultar con click al Log In Button:
 
 let loginForm = document.querySelector('.login-form');
@@ -52,10 +53,72 @@ window.onscroll = ()=> {
 
 /*---------------------------------------------------------------------------------------------------------------*/
 
-// Id de las cards de mis productos que se mostraran en mi HTML:
+// LOG IN formulario > jQuery animation
+
+$(document).ready(function() {
+  $("#user-info").find("input, textarea").on("keyup blur focus", function(e) {
+    let $this = $(this),
+        label = $this.prev("label");
+
+        if (e.type === "keyup") {
+          if($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.addClass("actived highlight");
+          }
+        } else if (e.type === "blur") {
+          if ($this.val() === "") {
+            label.removeClass("actived highlight");
+          } else {
+            label.removeClass("highlight");
+          }
+        } else if (e.type === "focus") {
+          if ($this.val() === "") {
+            label.removeClass("highlight");
+          } else if ($this.val() !== "") {
+            label.addClass("highlight");
+          }
+        }
+  });
+
+  $(".tab a").on("click", function(e) {
+    e.preventDefault();
+
+    $(this).parent().addClass("actived");
+    $(this).parent().siblings().removeClass("actived");
+
+    target = $(this).attr("href");
+
+    $(".tab-content > div").not(target).hide();
+
+    $(target).fadeIn(600);
+  })
+})
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+// Animación con jQuery:
+
+$('#logo').on('click', scrollDown);
+function scrollDown(e) {
+	e.preventDefault();
+	$('html, body').animate({
+		scrollTop: $('#home').offset().top
+	}, 1000, () => {
+		console.log("Scroll terminado");
+	})
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+// SELECTORES Y OBJETOS
+
+// Selector de las cards de mis productos que se mostraran en mi HTML:
 const productosItems = document.getElementById('productos-items');
-// Id de las cards de mis promos que se mostraran en mi HTML:
+// Selector de las cards de mis promos que se mostraran en mi HTML:
 const promosItems = document.getElementById('promos-items');
+// Selector de la barra de búsqueda de mis productos:
+const formBuscador = document.querySelector('#formulario');
 // Id de las items de mis productos que se mostraran en mi carrito:
 const carritoItems = document.getElementById('carrito-items');
 // Id de mi carrito cuando está vacio:
@@ -75,7 +138,37 @@ let carrito = {};
 // Creo el objeto busqueda para llenar con los nombres de mis productos
 let busqueda = {};
 
+/*---------------------------------------------------------------------------------------------------------------*/
 
+// OBTENER DATOS DEL LOCAL STORAGE
+
+// Leer JSON de productos
+const fetchDataProductos = async () => {
+  try {
+    const answer = await fetch('data/productos.json');
+    const data = await answer.json();
+    // console.log(data);
+    pintarProductos(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// Leer JSON de promos
+const fetchDataPromos = async () => {
+  try {
+    const answer = await fetch('data/promos.json');
+    const data = await answer.json();
+    // console.log(data);
+    pintarPromos(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+// LISTENERS
 
 // Esperar a que se ejecute documento HTML antes de cargar el json:
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -86,30 +179,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     pintarCarrito();
   }
 });
-// A traves del atributo data-id capturo el evento "click" en el botón "Agregar al carrito" de la seccion productos 
-productosItems.addEventListener('click', e => {
-  addCarrito(e);
-  e.preventDefault();
-});
-
-
-// A traves del atributo data-id capturo el evento "click" en los botones + y - del carrito para aumentar y disminuir la cantidad de productos seleccionados: 
-carritoItems.addEventListener('click', e => {
-  btnCantidad(e);
-  e.preventDefault();
-});
-
-// Leer JSON de productos
-const fetchDataProductos = async () => {
-  try {
-    const answer = await fetch('productos.json');
-    const data = await answer.json();
-    // console.log(data);
-    pintarProductos(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 // Esperar a que se ejecute documento HTML antes de cargar el json:
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -121,23 +190,29 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
 });
 
+// CARRITO listeners:
+
+// A traves del atributo data-id capturo el evento "click" en el botón "Agregar al carrito" de la seccion productos 
+productosItems.addEventListener('click', e => {
+  addCarrito(e);
+  e.preventDefault();
+});
+
 // A traves del atributo data-id capturo el evento "click" en el botón "Agregar al carrito" de la seccion promos 
 promosItems.addEventListener('click', e => {
   addCarrito(e);
   e.preventDefault();
 });
 
-// Leer JSON de promos
-const fetchDataPromos = async () => {
-  try {
-    const answer = await fetch('promos.json');
-    const data = await answer.json();
-    // console.log(data);
-    pintarPromos(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+// A traves del atributo data-id capturo el evento "click" en los botones + y - del carrito para aumentar y disminuir la cantidad de productos seleccionados: 
+carritoItems.addEventListener('click', e => {
+  btnCantidad(e);
+  e.preventDefault();
+});
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+// FUNCIONES
 
 // Una vez accedo a la info de mis cards de Productos, las "pinto" en mi HTML:
 const pintarProductos = data => {
@@ -176,8 +251,6 @@ const pintarPromos = data => {
   promosItems.appendChild(fragment);
 }
 
-
-
 // Al capturar el evento 'click' en el boton "Agregar al carrito" con la class 'btn' capturo la info del producto y la envío a la funcion setCarrito
 const addCarrito = e => {
   if (e.target.classList.contains('btn')) {
@@ -194,6 +267,7 @@ const addCarrito = e => {
   }
   e.stopPropagation();
 }
+
 // Funcion para manipular el objeto carrito:
 const setCarrito = objeto => {
   // Con la info capturada construimos el objeto Producto
@@ -239,9 +313,12 @@ const pintarCarrito = () => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+let cartCounter = document.querySelector("#cart-counter");
+
 const pintarTotal = () => {
   //Para no sobreescribir la info, reinicia el template:
   carritoFooter.innerHTML = '';
+
   //Si el carrito está vacío:
   if (Object.keys(carrito).length === 0) {
     carritoFooter.innerHTML = `
@@ -261,6 +338,9 @@ const pintarTotal = () => {
   templateTotal.querySelector('.total-items p spam').textContent = nCantidad;
   templateTotal.querySelector('.total-precio p spam').textContent = nPrecio;
 
+  // Contador del Icono del Carrito:
+  cartCounter.innerHTML = nCantidad;
+
   const clone = templateTotal.cloneNode(true);
   fragment.appendChild(clone);
   carritoFooter.appendChild(fragment);
@@ -268,12 +348,14 @@ const pintarTotal = () => {
   const vaciarCarrito = document.getElementById('vaciar-carrito');
   vaciarCarrito.addEventListener('click', () => {
     carrito = {};
+    cartCounter.innerHTML = 0;
     pintarCarrito();
   });
 
   const finalizarCompra = document.getElementById('comprar-btn');
   finalizarCompra.addEventListener('click', () => {
     carrito = {};
+    cartCounter.innerHTML = 0;
     pintarCarrito();
     carritoFooter.innerHTML = `
     <div class="compra-modal">
@@ -295,12 +377,14 @@ const pintarTotal = () => {
   })
 }
 
+// Botones para aumentar/disminuir/eliminar los productos de mi carrito:
 const btnCantidad = e => {
   // Aumentar cantidad
   if (e.target.classList.contains('fa-plus-square')) {
     const producto = carrito[e.target.dataset.id];
     producto.cantidad++;
     carrito[e.target.dataset.id] = {...producto};
+
     pintarCarrito();
   }
   // Disminuir cantidad
@@ -310,6 +394,7 @@ const btnCantidad = e => {
     
     if (producto.cantidad === 0) {
       delete carrito[e.target.dataset.id];
+      cartCounter.innerHTML = 0;
     }
 
     pintarCarrito();
@@ -317,6 +402,7 @@ const btnCantidad = e => {
   // Eliminar producto
   if (e.target.classList.contains('fa-trash-alt')) {
     const producto = carrito[e.target.dataset.id];
+    cartCounter.innerHTML = 0;
     delete carrito[e.target.dataset.id];
 
     pintarCarrito();
@@ -325,107 +411,5 @@ const btnCantidad = e => {
   e.stopPropagation();
 }
 
-/*-------------------------------------------------------------------------------------------------------*/
 
-// LOG IN formulario > jQuery animation
 
-$(document).ready(function() {
-  $("#user-info").find("input, textarea").on("keyup blur focus", function(e) {
-    let $this = $(this),
-        label = $this.prev("label");
-
-        if (e.type === "keyup") {
-          if($this.val() === "") {
-            label.removeClass("actived highlight");
-          } else {
-            label.addClass("actived highlight");
-          }
-        } else if (e.type === "blur") {
-          if ($this.val() === "") {
-            label.removeClass("actived highlight");
-          } else {
-            label.removeClass("highlight");
-          }
-        } else if (e.type === "focus") {
-          if ($this.val() === "") {
-            label.removeClass("highlight");
-          } else if ($this.val() !== "") {
-            label.addClass("highlight");
-          }
-        }
-  });
-
-  $(".tab a").on("click", function(e) {
-    e.preventDefault();
-
-    $(this).parent().addClass("actived");
-    $(this).parent().siblings().removeClass("actived");
-
-    target = $(this).attr("href");
-
-    $(".tab-content > div").not(target).hide();
-
-    $(target).fadeIn(600);
-  })
-})
-
-/*-------------------------------------------------------------------------------------------------------*/
-
-// LOG IN formulario > jQuery animation
-
-$(document).ready(function() {
-  $("#user-info").find("input, textarea").on("keyup blur focus", function(e) {
-    let $this = $(this),
-        label = $this.prev("label");
-
-        if (e.type === "keyup") {
-          if($this.val() === "") {
-            label.removeClass("actived highlight");
-          } else {
-            label.addClass("actived highlight");
-          }
-        } else if (e.type === "blur") {
-          if ($this.val() === "") {
-            label.removeClass("actived highlight");
-          } else {
-            label.removeClass("highlight");
-          }
-        } else if (e.type === "focus") {
-          if ($this.val() === "") {
-            label.removeClass("highlight");
-          } else if ($this.val() !== "") {
-            label.addClass("highlight");
-          }
-        }
-  });
-
-  $(".tab a").on("click", function(e) {
-    e.preventDefault();
-
-    $(this).parent().addClass("actived");
-    $(this).parent().siblings().removeClass("actived");
-
-    target = $(this).attr("href");
-
-    $(".tab-content > div").not(target).hide();
-
-    $(target).fadeIn(600);
-  })
-})
-
-/*-------------------------------------------------------------------------------------------------------*/
-
-// SEARCH formulario usando jQuery
-
-$(document).ready(function(){
-  $('#search-box').keyup(function(){
-    search_box($(this).val());
-  });
-
-  function search_box (value) {
-    $('#template-search-item').each(function() {
-      
-    })
-
-  }
-})

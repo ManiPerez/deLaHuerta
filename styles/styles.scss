@@ -29,7 +29,7 @@ body {
 }
 
 section {
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
 .btn {
@@ -103,6 +103,7 @@ section {
         font-size: 2.3rem;
         font-weight: 400;
         color: $green;
+        cursor: pointer;
 
         i {
             color: $green-darker;
@@ -113,6 +114,10 @@ section {
             color: $green-darker;
             font-weight: 700;
             font-size: 2.5rem;
+        }
+
+        &:hover {
+            color: $black;
         }
     }
 
@@ -129,6 +134,10 @@ section {
     }
 
     .icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         i {
             font-size: 1.5rem;
             height: 4.5rem;
@@ -147,6 +156,49 @@ section {
             }
         }
 
+        .cart-icon {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+
+            i {
+                font-size: 1.5rem;
+                height: 4.5rem;
+                width: 4.5rem;
+                line-height: 4.5rem;
+                border-radius: .5rem;
+                background: $bg;
+                color: $black;
+                margin-left: .3rem;
+                text-align: center;
+                cursor: pointer;
+    
+                &:hover {
+                    background: $green;
+                    color: #fff;
+                }
+            }
+
+            .counter-cart-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 20%;
+                left: 75%;
+                z-index: 0;
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: #fff;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                background: $green;
+                text-align: center;
+            }
+        }
+
         #menu-btn {
             display: none;
         }
@@ -156,7 +208,7 @@ section {
         position: absolute;
         top: 110%;
         right: -110%;
-        width: 50rem;
+        width: 40rem;
         height: 5rem;
         background: #fff;
         border-radius: .5rem;
@@ -165,7 +217,7 @@ section {
         align-items: center;
         box-shadow: $box-shasow;
 
-        input {
+        #search-box {
             height: 100%;
             width: 100%;
             background: none;
@@ -173,18 +225,6 @@ section {
             color: $black;
             padding: 0 1.5rem;
             left: 1rem;
-        }
-
-        label {
-            font-size: 2.2rem;
-            padding-right: 1.5rem;
-            color: $black;
-            cursor: pointer;
-            top: .5rem;
-
-            &:hover {
-                color: $green;
-            }
         }
 
         &.active {
@@ -1238,4 +1278,15 @@ section {
     html {
         font-size: 50%;
     }
+}
+
+/*-------------- Purchase Transaccion --------------*/
+.purchase-bg {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(33, 38, 34, 0.5);
+    cursor: pointer;
 }
