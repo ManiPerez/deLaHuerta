@@ -27,7 +27,7 @@
 <body>
     <!-- Header section starts -->
     <header class="header">
-        <a href="./index.html" class="logo"><i class="fas fa-seedling"></i> deLa<span>H</span>uerta</a>
+        <h2 class="logo" id="logo"><i class="fas fa-seedling"></i> deLa<span>H</span>uerta</h2>
 
         <nav class="navbar">
             <a href="#home">Inicio</a>
@@ -40,32 +40,17 @@
         <div class="icons">
             <i class="fas fa-bars" id="menu-btn"></i>
             <i class="fas fa-search" id="search-btn"></i>
-            <i class="fas fa-shopping-basket" id="cart-btn"></i>
             <i class="fas fa-user" id="login-btn"></i>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fas fa-shopping-basket"></i>
+                <div class="counter-cart-icon" id="cart-counter">0</div>
+            </div>
         </div>
         
-        <form action="" class="search-form">
-            <input type="text" name="search" id="search-box" placeholder="Buscar...">
-            <label for="search-box"></label>
-
-            <div class="search-item" id="search-item">
-                <!-- Search Item template -->
-            </div>
-
-            <template id="template-search-item">
-                <div class="carrito-items">
-                      <div class="carrito-img">
-                          <img src="" alt="">
-                      </div>
-                      <div class="carrito-info">
-                          <h3>nombre</h3>
-                          <p>xunidad</p>
-                      </div>
-                      <div class="item-precio"><p>$<spam>0</spam></p></div>
-                      <div class="sum-cart-btn"><i class="fas fa-shopping-basket" id="cart-btn"></i></div>
-                </div>
-            </template>
-
+        <!-- Formulario para la barra de busqueda de productos -->
+        <form class="search-form" id="formulario">
+            <input type="text" name="search" id="search" placeholder="Buscar...">
+            <input class="submit-search" type="submit" value="">
         </form>
 
         <div class="shopping-cart" id="carrito">
@@ -219,21 +204,21 @@
             <div class="box">
                 <img src="./images/features-img-1.png" alt="Canasta de vegetales y frutas">
                 <h3>Frescos y orgánicos</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Nuestra huerta es 100% orgánica y libre de agroquímicos.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
             <div class="box">
                 <img src="./images/features-img-2.png" alt="Delivery a domicilio">
                 <h3>Envío a domicilio</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Haz tu pedido y te lo llevamos a tu casa!</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
 
             <div class="box">
                 <img src="./images/features-img-3.png" alt="Medios de pago">
                 <h3>Todos los medios de pago</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Ofrecemos variadas formas de efectuar tu compra.</p>
                 <a href="#" class="btn">Leer más</a>
             </div>
         </div>
