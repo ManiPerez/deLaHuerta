@@ -20,7 +20,6 @@ document.querySelector('#cart-btn').onclick = ()=> {
     navbar.classList.remove('active');
 }
 
-
 // Log In: desocultar, ocultar con click al Log In Button:
 
 let loginForm = document.querySelector('.login-form');
@@ -109,9 +108,7 @@ function scrollDown(e) {
 	})
 }
 
-/*---------------------------------------------------------------------------------------------------------------*/
-
-// SELECTORES Y OBJETOS
+/*--------------------------------------------------------------------------------------------------------------*/
 
 // Selector de las cards de mis productos que se mostraran en mi HTML:
 const productosItems = document.getElementById('productos-items');
@@ -138,57 +135,53 @@ let carrito = {};
 // Creo el objeto busqueda para llenar con los nombres de mis productos
 let busqueda = {};
 
+
+
 /*---------------------------------------------------------------------------------------------------------------*/
 
 // OBTENER DATOS DEL LOCAL STORAGE
 
-// Leer JSON de productos
-const fetchDataProductos = async () => {
-  try {
-    const answer = await fetch('data/productos.json');
-    const data = await answer.json();
-    // console.log(data);
-    pintarProductos(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+document.addEventListener('DOMContentLoaded', () => {
 
-// Leer JSON de promos
-const fetchDataPromos = async () => {
-  try {
-    const answer = await fetch('data/promos.json');
-    const data = await answer.json();
-    // console.log(data);
-    pintarPromos(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+	$.ajax({
+		type: "GET",
+        url: 'data/productos.json',
+		dataType: 'JSON',
+		success: function (productosJSON) {
+			productos = productosJSON;
+			// renderProductos(productos);
+            pintarProductos(productos);
+		},
+		error: function (xhr, textStatus, error) {
+			console.log(xhr);
+			console.log(textStatus);
+			console.log(error);
+		}
+	});
 
-/*---------------------------------------------------------------------------------------------------------------*/
+  $.ajax({
+		type: "GET",
+        url: 'data/promos.json',
+		dataType: 'JSON',
+		success: function (promosJSON) {
+			promos = promosJSON;
+			// renderPromos(promos);
+            pintarPromos(promos);
+		},
+		error: function (xhr, textStatus, error) {
+			console.log(xhr);
+			console.log(textStatus);
+			console.log(error);
+		}
+	});
 
-// LISTENERS
-
-// Esperar a que se ejecute documento HTML antes de cargar el json:
-document.addEventListener('DOMContentLoaded', ()=> {
-  fetchDataProductos();
-  // Almacenar carrito en local storage al actualizar pagina:
-  if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'));
-    pintarCarrito();
-  }
-});
-
-// Esperar a que se ejecute documento HTML antes de cargar el json:
-document.addEventListener('DOMContentLoaded', ()=> {
-  fetchDataPromos();
-    // Almacenar carrito en local storage al actualizar pagina:
     if (localStorage.getItem('carrito')) {
-      carrito = JSON.parse(localStorage.getItem('carrito'));
-      pintarCarrito();
+        carrito = JSON.parse(localStorage.getItem('carrito'));
+        pintarCarrito();
     }
 });
+
+/*---------------------------------------------------------------------------------------------------------------*/
 
 // CARRITO listeners:
 
@@ -215,9 +208,9 @@ carritoItems.addEventListener('click', e => {
 // FUNCIONES
 
 // Una vez accedo a la info de mis cards de Productos, las "pinto" en mi HTML:
-const pintarProductos = data => {
+const pintarProductos = productos => {
   //Una vez obtenida la data, la recorro con un forEach. Como mi api está en json ocupo un forEach
-  data.forEach(producto => {
+  productos.forEach(producto => {
     templateProductos.querySelector('img').setAttribute("src",producto.imagen);
     templateProductos.querySelector('h3').textContent = producto.nombre;
     templateProductos.querySelector('p').textContent = producto.xunidad;
@@ -233,9 +226,9 @@ const pintarProductos = data => {
 }
 
 // Una vez accedo a la info de mis cards de Promos, las "pinto" en mi HTML:
-const pintarPromos = data => {
+const pintarPromos = promos => {
   //Una vez obtenida la data, la recorro con un forEach. Como mi api está en json ocupo un forEach
-  data.forEach(promo => {
+  promos.forEach(promo => {
     templatePromos.querySelector('img').setAttribute("src",promo.imagen);
     templatePromos.querySelector('h3').textContent = promo.nombre;
     templatePromos.querySelector('.promo-info').textContent = promo.descripcion;
@@ -410,6 +403,3 @@ const btnCantidad = e => {
 
   e.stopPropagation();
 }
-
-
-

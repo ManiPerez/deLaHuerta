@@ -1240,6 +1240,23 @@ section {
   border: 1px solid #96CC39;
 }
 
+.footer__box-container .footer-box .submit {
+  width: 100%;
+  margin: .7rem 0;
+  padding: .7rem;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  background: none;
+  color: #96CC39;
+  border: 1px solid #96CC39;
+}
+
+.footer__box-container .footer-box .submit:hover {
+  background: #96CC39;
+  color: #fff;
+  border: 1px solid #689D00;
+}
+
 .footer__box-container .footer-box .payment-img {
   margin-top: 2rem;
   width: 15rem;

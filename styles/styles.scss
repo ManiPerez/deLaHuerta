@@ -1124,6 +1124,23 @@ section {
                 border: 1px solid $green;
             }
 
+            .submit {
+                width: 100%;
+                margin: .7rem 0;
+                padding: .7rem;
+                border-radius: .5rem;
+                font-size: 1.5rem;
+                background: none;
+                color: $green;
+                border: 1px solid $green;
+
+                &:hover {
+                    background: $green;
+                    color: #fff;
+                    border: 1px solid $green-darker;
+                }
+            }
+
             .payment-img {
                 margin-top: 2rem;
                 width: 15rem;
