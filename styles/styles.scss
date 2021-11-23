@@ -78,6 +78,7 @@ section {
         font-size: 2rem;
         line-height: 1.5;
         color: $black;
+        padding-top: 1rem;
     }
     
     .precio {
@@ -910,13 +911,10 @@ section {
     }
 }
 
-/*----------- Features Section -----------*/
-.features {
-    padding: 5rem 14rem;
-}
-
 /*----------- Products Section -----------*/
 .productos {
+    padding: 5rem 0;
+
     &__container {
         display: flex;
         flex-wrap: wrap;
@@ -976,7 +974,12 @@ section {
 
 /*----------- Promos Section -----------*/
 .promos {
-    padding: 5rem 14rem;
+    padding: 0 14rem 5rem 14rem;
+}
+
+/*----------- Features Section -----------*/
+.features {
+    padding: 0 14rem 5rem 14rem;
 }
 
 /*----------- Review Section -----------*/
