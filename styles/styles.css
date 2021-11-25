@@ -1415,16 +1415,21 @@ section {
   html {
     font-size: 50%;
   }
-}
-
-/*-------------- Purchase Transaccion --------------*/
-.purchase-bg {
-  height: 100vh;
-  width: 100%;
-  display: none;
-  position: fixed;
-  z-index: 999;
-  background-color: rgba(33, 38, 34, 0.5);
-  cursor: pointer;
+  .email {
+    width: 1000%;
+    margin: .7rem 0;
+    padding: .7rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    background: none;
+    color: #96CC39;
+    border: 1px solid #96CC39;
+  }
+  .footer__box-container .footer-box .email {
+    width: 80%;
+  }
+  .footer__box-container .footer-box .submit {
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
