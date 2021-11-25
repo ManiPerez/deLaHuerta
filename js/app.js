@@ -145,12 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	$.ajax({
 		type: "GET",
-        url: 'data/productos.json',
+    url: 'data/productos.json',
 		dataType: 'JSON',
 		success: function (productosJSON) {
-			productos = productosJSON;
-			// renderProductos(productos);
-            pintarProductos(productos);
+      productos = productosJSON;
+      pintarProductos(productos);
 		},
 		error: function (xhr, textStatus, error) {
 			console.log(xhr);
@@ -161,12 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $.ajax({
 		type: "GET",
-        url: 'data/promos.json',
+    url: 'data/promos.json',
 		dataType: 'JSON',
 		success: function (promosJSON) {
 			promos = promosJSON;
-			// renderPromos(promos);
-            pintarPromos(promos);
+      pintarPromos(promos);
 		},
 		error: function (xhr, textStatus, error) {
 			console.log(xhr);

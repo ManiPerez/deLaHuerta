@@ -1224,6 +1224,10 @@ section {
   width: 50px;
 }
 
+.footer__box-container .footer-box .share {
+  margin-top: 1rem;
+}
+
 .footer__box-container .footer-box .share a i {
   font-size: 2rem;
   color: #96CC39;
