@@ -392,7 +392,6 @@ const btnCantidad = e => {
   }
   // Eliminar producto
   if (e.target.classList.contains('fa-trash-alt')) {
-    const producto = carrito[e.target.dataset.id];
     cartCounter.innerHTML = 0;
     delete carrito[e.target.dataset.id];
 
